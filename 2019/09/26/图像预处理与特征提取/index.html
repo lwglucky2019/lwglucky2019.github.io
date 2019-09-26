@@ -79,13 +79,27 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="WeiGuangLi">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="13.1 像素处理13.1.1 白化 x_{ij}=\frac{p_{ij}-\mu}{\sigma} \tag{13.1.1}13.1.2 直方图均匀化13.1.3 线性滤波卷积操作:     卷积操作         卷积操作2       不同的滤波操作算子       不同算子操作的结果    Gabor 特征https://www.cnblogs.com/emouse/p/3611256">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图像预处理与特征提取">
+<meta property="og:url" content="http://yoursite.com/2019/09/26/图像预处理与特征提取/index.html">
 <meta property="og:site_name" content="WeiGuangLi">
+<meta property="og:description" content="13.1 像素处理13.1.1 白化 x_{ij}=\frac{p_{ij}-\mu}{\sigma} \tag{13.1.1}13.1.2 直方图均匀化13.1.3 线性滤波卷积操作:     卷积操作         卷积操作2       不同的滤波操作算子       不同算子操作的结果    Gabor 特征https://www.cnblogs.com/emouse/p/3611256">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190923195825.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/aa.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190923200814.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190923201041.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190925070929.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/26/图像预处理与特征提取/图像预处理与特征提取.assets/22.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/26/图像预处理与特征提取/图像预处理与特征提取.assets/20190925215113.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190925215325.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/33.png">
+<meta property="og:updated_time" content="2019-09-26T01:49:20.911Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WeiGuangLi">
+<meta name="twitter:title" content="图像预处理与特征提取">
+<meta name="twitter:description" content="13.1 像素处理13.1.1 白化 x_{ij}=\frac{p_{ij}-\mu}{\sigma} \tag{13.1.1}13.1.2 直方图均匀化13.1.3 线性滤波卷积操作:     卷积操作         卷积操作2       不同的滤波操作算子       不同算子操作的结果    Gabor 特征https://www.cnblogs.com/emouse/p/3611256">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190923195825.png">
 
 
 
@@ -115,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/26/图像预处理与特征提取/">
 
 
 
 
 
-  <title>WeiGuangLi</title>
+  <title>图像预处理与特征提取 | WeiGuangLi</title>
   
 
 
@@ -142,8 +156,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -216,9 +229,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -248,9 +261,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/26/图像预处理与特征提取/" itemprop="url">图像预处理与特征提取</a></h1>
+          <h1 class="post-title" itemprop="name headline">图像预处理与特征提取</h1>
         
 
         <div class="post-meta">
@@ -300,9 +311,7 @@
       
 
       
-        
-          
-            <h2 id="13-1-像素处理"><a href="#13-1-像素处理" class="headerlink" title="13.1 像素处理"></a>13.1 像素处理</h2><h3 id="13-1-1-白化"><a href="#13-1-1-白化" class="headerlink" title="13.1.1 白化"></a>13.1.1 白化</h3><script type="math/tex; mode=display">
+        <h2 id="13-1-像素处理"><a href="#13-1-像素处理" class="headerlink" title="13.1 像素处理"></a>13.1 像素处理</h2><h3 id="13-1-1-白化"><a href="#13-1-1-白化" class="headerlink" title="13.1.1 白化"></a>13.1.1 白化</h3><script type="math/tex; mode=display">
 x_{ij}=\frac{p_{ij}-\mu}{\sigma} \tag{13.1.1}</script><h3 id="13-1-2-直方图均匀化"><a href="#13-1-2-直方图均匀化" class="headerlink" title="13.1.2 直方图均匀化"></a>13.1.2 直方图均匀化</h3><h3 id="13-1-3-线性滤波"><a href="#13-1-3-线性滤波" class="headerlink" title="13.1.3 线性滤波"></a>13.1.3 线性滤波</h3><p>卷积操作:</p>
 <center> 
 <img style="border-radius: 1em;
@@ -444,8 +453,6 @@ G_o(f)=\frac{1}{2}(e^{-2\pi^2(f+f_1)^2 \sigma ^2 } - e^{-2π^2(f-f_1)^2σ^2}) \t
 <p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190925215325.png" alt="f1的影响"></p>
 <p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/33.png" alt="varying_theta"></p>
 <h3 id="134-局部二值模型"><a href="#134-局部二值模型" class="headerlink" title="134 局部二值模型"></a>134 局部二值模型</h3><h3 id="13-1-5-纹理单元映射"><a href="#13-1-5-纹理单元映射" class="headerlink" title="13.1.5 纹理单元映射"></a>13.1.5 纹理单元映射</h3>
-          
-        
       
     </div>
     
@@ -462,12 +469,12 @@ G_o(f)=\frac{1}{2}(e^{-2\pi^2(f+f_1)^2 \sigma ^2 } - e^{-2π^2(f-f_1)^2σ^2}) \t
       
 
       
+      
+      
 
       
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -477,10 +484,11 @@ G_o(f)=\frac{1}{2}(e^{-2\pi^2(f+f_1)^2 \sigma ^2 } - e^{-2π^2(f-f_1)^2σ^2}) \t
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -488,6 +496,10 @@ G_o(f)=\frac{1}{2}(e^{-2\pi^2(f+f_1)^2 \sigma ^2 } - e^{-2π^2(f-f_1)^2σ^2}) \t
 
 
           
+
+  
+
+
 
         </div>
         
@@ -508,8 +520,17 @@ G_o(f)=\frac{1}{2}(e^{-2\pi^2(f+f_1)^2 \sigma ^2 } - e^{-2π^2(f-f_1)^2σ^2}) \t
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -551,6 +572,22 @@ G_o(f)=\frac{1}{2}(e^{-2\pi^2(f+f_1)^2 \sigma ^2 } - e^{-2π^2(f-f_1)^2σ^2}) \t
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#13-1-像素处理"><span class="nav-number">1.</span> <span class="nav-text">13.1 像素处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#13-1-1-白化"><span class="nav-number">1.1.</span> <span class="nav-text">13.1.1 白化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-1-2-直方图均匀化"><span class="nav-number">1.2.</span> <span class="nav-text">13.1.2 直方图均匀化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-1-3-线性滤波"><span class="nav-number">1.3.</span> <span class="nav-text">13.1.3 线性滤波</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Gaussian-function-and-its-fourier-transform"><span class="nav-number">1.3.1.</span> <span class="nav-text">Gaussian function and its fourier transform</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#134-局部二值模型"><span class="nav-number">1.4.</span> <span class="nav-text">134 局部二值模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-1-5-纹理单元映射"><span class="nav-number">1.5.</span> <span class="nav-text">13.1.5 纹理单元映射</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -698,6 +735,10 @@ G_o(f)=\frac{1}{2}(e^{-2\pi^2(f+f_1)^2 \sigma ^2 } - e^{-2π^2(f-f_1)^2σ^2}) \t
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
