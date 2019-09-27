@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c2f6ff;
+  background: #a7f994;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1918,7 +1918,6 @@ pre .javascript .function {
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: justify;
-  white-space: nowrap;
   line-height: 1.8;
 }
 .post-toc .nav .nav-child {
@@ -3004,4 +3003,10 @@ pre .javascript .function {
   z-index: -1;
   width: 100%;
   height: 100%;
+}
+.post-toc .nav .nav-child {
+  display: block;
+}
+.post-toc ol {
+  font-size: 13px;
 }
