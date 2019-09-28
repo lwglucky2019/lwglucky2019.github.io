@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1. 神经元 单个神经元的的公式：   \left\{ \begin{array}{l} z = WX  \\ f = sigmoid(z) \end{array} \right.其中sigmoid函数：  sigmoid(x)=\frac{1}{1+e^{-x}} sigmoid: $  g = \frac{1}{1 + e^{ - z}} $函数求导：   \begin{array}{l} \">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深度卷积网络">
+<meta property="og:url" content="http://yoursite.com/2019/09/28/深度卷积网络/index.html">
+<meta property="og:site_name" content="WeiGuangLi">
+<meta property="og:description" content="1. 神经元 单个神经元的的公式：   \left\{ \begin{array}{l} z = WX  \\ f = sigmoid(z) \end{array} \right.其中sigmoid函数：  sigmoid(x)=\frac{1}{1+e^{-x}} sigmoid: $  g = \frac{1}{1 + e^{ - z}} $函数求导：   \begin{array}{l} \">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190913203115.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/sigmoid.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190913205317.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190913205716.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190913210033.png">
+<meta property="og:image" content="https://images2017.cnblogs.com/blog/853467/201710/853467-20171031123650574-11330636.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190914093628.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190914094606.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190914094821.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190914152601.png">
+<meta property="og:updated_time" content="2019-09-28T15:52:54.731Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="深度卷积网络">
+<meta name="twitter:description" content="1. 神经元 单个神经元的的公式：   \left\{ \begin{array}{l} z = WX  \\ f = sigmoid(z) \end{array} \right.其中sigmoid函数：  sigmoid(x)=\frac{1}{1+e^{-x}} sigmoid: $  g = \frac{1}{1 + e^{ - z}} $函数求导：   \begin{array}{l} \">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190913203115.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/28/深度卷积网络/">
+
+
+
+
+
+  <title>深度卷积网络 | WeiGuangLi</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<div class="bg_content">
+<canvas id="canvas"></canvas>
+</div>
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">WeiGuangLi</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/深度卷积网络/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lwglucky">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WeiGuangLi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">深度卷积网络</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-28T22:42:45+08:00">
+                2019-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/人工智能/" itemprop="url" rel="index">
+                    <span itemprop="name">人工智能</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3><span id="1-神经元">1. 神经元</span></h3><p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190913203115.png" alt="神经元"></p>
+<p>单个神经元的的公式： </p>
+<script type="math/tex; mode=display">
+\left\{ \begin{array}{l}
+z = WX  \\
+f = sigmoid(z)
+\end{array} \right.</script><p>其中sigmoid函数：</p>
+<script type="math/tex; mode=display">
+sigmoid(x)=\frac{1}{1+e^{-x}}</script><p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/sigmoid.png" alt="sigmoid"></p>
+<p>sigmoid: $  g = \frac{1}{1 + e^{ - z}} $函数求导：</p>
+<script type="math/tex; mode=display">
+ \begin{array}{l}
+\frac{\partial g(z)}{\partial z} 
+= \frac{e^{ -z}}{(1 + e^{ - z})^2}  \\ 
+= \frac{1 + {e^{ - z}} - 1}{(1 + e^{ - z})^2}\\
+ = \frac{1}{1 + e^{-z}} - \frac{1}{(1 + e^{ -z})^2}\\
+ = g(z) - {g(z)^2} = g(z)(1 - g(z))
+\end{array}  \tag{1.3}</script><p>其中使用了求导公式:$(\frac{u}{v})’=\frac{u’v-v’u}{v^2}$。</p>
+<hr>
+<h3><span id="2多层神经网络">2.多层神经网络</span></h3><p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190913205317.png" alt="学习算法框图"><br><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190913205716.png" alt="多层神经网络"></p>
+<hr>
+<h3><span id="3逆向误差传播算法">3.逆向误差传播算法</span></h3><p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190913210033.png" alt="BP"></p>
+<p>设定：从输入层数据为X，输入层到隐藏层参数为w,b1，隐藏层到输出层参数为v,b2，激活函数用为g1,g2。于是模型设定为：</p>
+<p>输入层到隐藏层：</p>
+<script type="math/tex; mode=display">
+net_{1} = w^{T}x+b_{1},h=g_{1}(net_{1})    \tag{3.1}</script><p>隐藏层到输出层：</p>
+<script type="math/tex; mode=display">
+net_{2} = v^{T}h+b_{2},\hat{y}=g_{2}(net_{2})   \tag{3.2}</script><p>模型：</p>
+<script type="math/tex; mode=display">
+\hat{y}=g_{2}(net_{2})=g_{2}(v^{T}g_{1}(net_{1})+b_{2})=g_{2}(v^{T}g_{1}(w^{T}x+b_{1})+b_{2})  \tag{3.3}</script><p>损失函数：</p>
+<script type="math/tex; mode=display">
+E(\theta )=\frac{1}{2}\sum_{i=1}^{2} (y_{i}-\hat{y_{i}})^2          \tag{3.4}</script><p>其中：</p>
+<script type="math/tex; mode=display">
+x =\begin{pmatrix} x_{1}\\ x_{2}\\ x_{3}\\ x_{4} \end{pmatrix},w=\begin{pmatrix} w_{11} &w_{12} &... &w_{15} \\ w_{21}&w_{22} &... &w_{25} \\ w_{31}&w_{32} &... &w_{35} \\ w_{41} &w_{42} &... &w_{45} \end{pmatrix},b_{1}=\begin{pmatrix} b_{11}\\ b_{12}\\ ...\\ b_{14} \end{pmatrix},net_{1}=\begin{pmatrix} net_{11}\\ net_{12}\\ ...\\ net_{14} \end{pmatrix}</script><script type="math/tex; mode=display">
+h =\begin{pmatrix} h_{1}\\ h_{2}\\ ...\\ h_{5} \end{pmatrix},v=\begin{pmatrix} v_{11} &v_{12} \\ v_{21} &v_{22} \\ ... &... \\ v_{51} &v_{52} \end{pmatrix},b_{2}=\begin{pmatrix} b_{21}\\ b_{22} \end{pmatrix},net_{2}=\begin{pmatrix} net_{21}\\ net_{22} \end{pmatrix}</script><script type="math/tex; mode=display">
+\hat{y}=\begin{pmatrix} \hat{y_{1}}\\ \hat{y_{2}} \end{pmatrix},y=\begin{pmatrix} y_{1}\\ y_{2}\end{pmatrix}</script><p>以上述的模型设定为例，下面介绍BP算法步骤，通过BP算法的步骤，了解反向传播，是如何实现模型的参数更新。</p>
+<p>实施步骤：</p>
+<p>1）初始化网络中的权值和偏置项，分别记为: $w^{(0)},b_{1}^{(0)},v^{(0)},b_{2}^{(0)}$</p>
+<p>2）激活前向传播，得到各层输出和损失函数的期望值</p>
+<script type="math/tex; mode=display">
+E(\theta )=\frac{1}{2}\sum_{i=1}^{2}(y_{i}-\hat{y_{i}})^{2}   \tag{3.6}</script><p>其中，θ表示参数集合，y表示真实值，$\hat{y}$ 表示预测值，$\frac{1}{2}$表示对总的误差值取平均，所以一般情况下，输出单元多少维，误差值求平均就除以多少；本模型设定中，输出值为2维列数据，故用误差值除以2。一般情况下，损失函数的期望值表示为：</p>
+<script type="math/tex; mode=display">
+E(\theta )=\frac{1}{n}\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^{2}</script><p>这是一组n维数据的输出，若是有m组这样的数据，损失函数的期望值为：</p>
+<script type="math/tex; mode=display">
+E(\theta )=\frac{1}{m}\frac{1}{n}\sum_{j=1}^{m}\sum_{i=1}^{n}(y_{ji}-\hat{y}_{ji})^{2}</script><p>若真实值与输出值表示为 $y_{n\times m},\hat{y}_{n\times m}$，上式可表示为：</p>
+<script type="math/tex; mode=display">
+E(\theta )=\frac{1}{mn}(y-\hat{y})^T(y-\hat{y})</script><p>3）根据损失函数，计算输出单元的误差项和隐藏单元的误差项<br>输出单元的误差项，即计算损失函数关于输出单元的梯度值或偏导数，根据链式法则有：</p>
+<script type="math/tex; mode=display">
+\bigtriangledown _{(k)}v=\frac{\partial E}{\partial v}=\frac{\partial net_{2}}{\partial v}\frac{\partial \hat{y}}{\partial net_{2}}\frac{\partial E}{\partial \hat{y}}   \\    
+\bigtriangledown _{(k)}b_{2}=\frac{\partial E}{\partial b_{2}}=\frac{\partial net_{2}}{\partial b_{2}}\frac{\partial \hat{y}}{\partial net_{2}}\frac{\partial E}{\partial \hat{y}}</script><p>隐藏单元的误差项，即计算损失函数关于隐藏单元的梯度值或偏导数，根据链式法则有：</p>
+<script type="math/tex; mode=display">
+\bigtriangledown _{(k)}w=\frac{\partial E}{\partial w}=\frac{\partial net_{1}}{\partial w}\frac{\partial h}{\partial net_{1}}\frac{\partial net_{2}}{\partial h}\frac{\partial \hat{y}}{\partial net_{2}}\frac{\partial E}{\partial \hat{y}}  \\                   
+\bigtriangledown _{(k)}b_{1}=\frac{\partial E}{\partial b_{1}}=\frac{\partial net_{1}}{\partial b_{1}}\frac{\partial h}{\partial net_{1}}\frac{\partial net_{2}}{\partial h}\frac{\partial \hat{y}}{\partial net_{2}}\frac{\partial E}{\partial \hat{y}}</script><p>4） 更新神经网路中的权值和偏置项<br>输出单元参数更新：             </p>
+<script type="math/tex; mode=display">
+ v^{(k)}=v^{(k-1)}-\eta \bigtriangledown _{(k)}, \quad 
+v=v^{(k-1)}-\eta \frac{\partial E}{\partial v},  \quad 
+b_{2}^{(k)}=b_{2}^{(k-1)}-\eta \frac{\partial E}{\partial b_{2}}</script><p>隐藏单元参数更新： </p>
+<script type="math/tex; mode=display">
+w^{(k)}=w^{(k-1)}-\eta \bigtriangledown _{(k)}, \quad 
+w=w^{(k-1)}-\eta \frac{\partial E}{\partial w},  \quad 
+b_{1}^{(k)}=b_{1}^{(k-1)}-\eta \frac{\partial E}{\partial b_{1}}</script><p>其中，$\eta$表示学习率，k=1,2,…,n表示更新次数或迭代次数，k=1表示第一次更新，以此类推。此处可能和别处博客不太一样，但实质是一样的，此处的’+’或者’-‘主要取决于损失函数.<br>如何定义损失函数或者定义参数更新均可，但参数的更新一定是向参数的负梯度方向。</p>
+<p>5） 重复步骤2-4，直到损失函数小于事先给定的阈值或迭代次数用完为止，输出此时的参数即为目前最佳参数。</p>
+<ul>
+<li><p>BP算法缺陷与改进</p>
+</li>
+<li><p>BP算法缺陷：</p>
+<ol>
+<li>局部极小值:<br>对于多层网络，误差曲面可能含有多个不同的局部极小值，梯度下降可能导致陷入局部极小值。</li>
+<li>权值过多:<br>当隐藏节点过多，层数越多时，权值成倍增长。权值的增长意味着对应的空间维数的增加，过高的维数易导致训练后期的过拟合。</li>
+<li>容易过拟合<br>训练的次数过多、空间维数过高均容易过拟合。</li>
+</ol>
+</li>
+<li><p>BP算法改进：</p>
+</li>
+</ul>
+<ol>
+<li>利用动量法改进BP算法<br>动量法权值调整算法的具体做法是：将上一次权值调整量的一部分迭加到按本次误差计算所得的权值调整量上，作为本次的实际权值调整量，即：<script type="math/tex; mode=display">
+w^{(k)}=\beta w^{(k-1)}-\eta \bigtriangledown _{k}w</script>其中，$\beta$表示动量系数，$\eta$表示学习率。</li>
+<li>自适应调整学习率:<br>调整的基本指导思想是：在学习收敛的情况下，增大$\eta$以缩短学习时间；当$\eta$偏大致使不能收敛时，要及时减小它的值，知道收敛为止。此方法适用于设置阈值的情况下。</li>
+<li>动量-自适应学习速率调整算法:<br>采用动量法，BP算法可以找到更优的解；采用自适应学习速率法时，BP算法可以缩短训练时间。将以上两种方法结合起来，就得到动量-自适应学习率调整算法。<br>上述2）和3）都适应于设置阈值来停止程序的方法。</li>
+</ol>
+<hr>
+<h3><span id="4深度学习">4.深度学习</span></h3><p>在图像领域，用传统的神经网络并不合适。我们知道，图像是由一个个像素点构成，每个像素点有三个通道，分别代表RGB颜色，那么，如果一个图像的尺寸是（28，28，1），即代表这个图像的是一个长宽均为28，channel为1的图像（channel也叫depth,此处1代表灰色图像）。如果使用全连接的网络结构，即，网络中的神经与与相邻层上的每个神经元均连接，那就意味着我们的网络有28 <em> 28 =784个神经元，hidden层采用了15个神经元，那么简单计算一下，我们需要的参数个数(w和b)就有：784</em>15<em>10+15+10=117625个，这个参数太多了，随便进行一次反向传播计算量都是巨大的，从计算资源和调参的角度都不建议用传统的神经网络。(评论中有同学对这个参数计算不太理解，我简单说一下：图片是由像素点组成的，用矩阵表示的，28</em>28的矩阵，肯定是没法直接放到神经元里的，我们得把它“拍平”，变成一个28<em>28=784 的一列向量，这一列向量和隐含层的15个神经元连接，就有784</em>15=11760个权重w，隐含层和最后的输出层的10个神经元连接，就有11760*10=117600个权重w，再加上隐含层的偏置项15个和输出层的偏置项10个，就是：117625个参数了)<br><img src="https://images2017.cnblogs.com/blog/853467/201710/853467-20171031123650574-11330636.png" alt="img" style="zoom:50%;"></p>
+<p>LeNet:<br><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190914093628.png" alt="LeNet"></p>
+<ul>
+<li><strong>卷积层（Convolutional Layer）</strong></li>
+</ul>
+<p>　　上文提到我们用传统的三层神经网络需要大量的参数，原因在于每个神经元都和相邻层的神经元相连接，但是思考一下，这种连接方式是必须的吗？全连接层的方式对于图像数据来说似乎显得不这么友好，因为图像本身具有“二维空间特征”，通俗点说就是局部特性。譬如我们看一张猫的图片，可能看到猫的眼镜或者嘴巴就知道这是张猫片，而不需要说每个部分都看完了才知道，啊，原来这个是猫啊。所以如果我们可以用某种方式对一张图片的某个典型特征识别，那么这张图片的类别也就知道了。这个时候就产生了卷积的概念。举个例子，现在有一个4*4的图像，我们设计两个卷积核，看看运用卷积核后图片会变成什么样。</p>
+<p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190914094606.png" alt="卷积" style="zoom:80%;"></p>
+<ul>
+<li><strong>池化层（Pooling Layer）</strong></li>
+</ul>
+<p>通过上一层$2 \times 2$的卷积核操作后，我们将原始图像由$4 \times4$的尺寸变为了$3*3$的一个新的图片。池化层的主要目的是通过降采样的方式，在不影响图像质量的情况下，压缩图片，减少参数。简单来说，假设现在设定池化层采用MaxPooling，大小为$2 \times 2$，步长为1，取每个窗口最大的数值重新，那么图片的尺寸就会由$3 \times 3$变为$2 \times 2：(3-2)+1=2$。从上例来看，会有如下变换：</p>
+<p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190914094821.png" alt="池化" style="zoom:80%;"></p>
+<p><strong>池化层的意义：</strong><br>如果我们只取最大值，那其他的值被舍弃难道就没有影响吗？不会损失这部分信息吗？如果认为这些信息是可损失的，那么是否意味着我们在进行卷积操作后仍然产生了一些不必要的冗余信息呢？<br>其实从上文分析卷积核为什么有效的原因来看，每一个卷积核可以看做一个特征提取器，不同的卷积核负责提取不同的特征，我们例子中设计的第一个卷积核能够提取出“垂直”方向的特征，第二个卷积核能够提取出“水平”方向的特征，那么我们对其进行Max Pooling操作后，提取出的是真正能够识别特征的数值，其余被舍弃的数值，对于我提取特定的特征并没有特别大的帮助。那么在进行后续计算使，<strong>减小了feature map的尺寸，从而减少参数，达到减小计算量</strong>，缺不损失效果的情况。不过并不是所有情况Max Pooling的效果都很好，有时候有些周边信息也会对某个特定特征的识别产生一定效果，那么这个时候舍弃这部分“不重要”的信息，就不划算了。所以具体情况得具体分析，如果加了Max Pooling后效果反而变差了，不如把卷积后不加Max Pooling的结果与卷积后加了Max Pooling的结果输出对比一下，看看Max Pooling是否对卷积核提取特征起了反效果。</p>
+<ul>
+<li><strong>全连接层</strong><br>到这一步，其实我们的一个完整的“卷积部分”就算完成了，如果想要叠加层数，一般也是叠加“Conv-MaxPooing”,通过不断的设计卷积核的尺寸，数量，提取更多的特征，最后识别不同类别的物体。做完Max Pooling后，我们就会把这些数据“拍平”，丢到全连接层层，然后把全连接层采用softmax对其进行分类。<br>Softmax函数<script type="math/tex; mode=display">
+S_i = \frac{e^{V_i}}{\sum_j{e^{V_j}}}</script></li>
+</ul>
+<p>也就是说，是该元素的指数，与所有元素指数和的比值</p>
+<hr>
+<p>《Visualizing and Understanding convolutional networks》</p>
+<p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190914152601.png" alt="特征可视化"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/28/Linux下设置服务程序开机自动启动/" rel="next" title="Linux下设置服务程序开机自动启动">
+                <i class="fa fa-chevron-left"></i> Linux下设置服务程序开机自动启动
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">lwglucky</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">1. 神经元</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">2.多层神经网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">3.逆向误差传播算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">4.深度学习</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lwglucky</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
+<!-- ҳ����С���� -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<script type="text/javascript" src="/js/src/dynamic_bg.js"></script>
