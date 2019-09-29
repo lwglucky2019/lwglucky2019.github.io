@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff7e5e;
+  background: #ffff98;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2619,6 +2619,9 @@ pre .javascript .function {
   background: #fff;
   box-shadow: initial;
   border-radius: initial;
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: normal;
 }
 @media (min-width: 1600px) {
   .container .header-inner {
@@ -2679,6 +2682,9 @@ pre .javascript .function {
   min-height: 700px;
   box-shadow: initial;
   border-radius: initial;
+  font-family: Merriweather, "PT Serif", Georgia, "Times New Roman", STSong, serif;
+  font-style: normal;
+  font-weight: normal;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .content-wrap {
@@ -2991,11 +2997,11 @@ pre .javascript .function {
   }
 }
 .post {
-  margin-top: 60px;
-  margin-bottom: 60px;
-  padding: 25px;
-  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
-  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  -webkit-box-shadow: 0 0 10px rgba(125,0,0,0.5);
+  -moz-box-shadow: 0 0 10px rgba(0,75,204,0.5);
 }
 .bg_content {
   position: fixed;
@@ -3007,17 +3013,102 @@ pre .javascript .function {
 .post-toc .nav .nav-child {
   display: block;
 }
+.posts-expand,
+.content-wrap,
+.post,
+.post-type-normal {
+  padding-bottom: 2px;
+  padding-top: 25px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: #d9d0bc;
+}
 .post-toc ol {
   font-size: 13px;
+}
+.site-title {
+  font-weight: bolder;
+  font-size: 32px;
+  font-family: Merriweather, "PT Serif", Georgia, "Times New Roman", STSong, serif;
+  -webkit-animation: Glow 1.5s ease infinite alternate;
+  animation: Glow 1.5s ease infinite alternate;
+}
+.site-author-name {
+  -webkit-animation: Glow 1.5s ease infinite alternate;
+  animation: Glow 1.5s ease infinite alternate;
+}
+.post-title-link {
+  font-weight: bolder;
+  text-shadow: 1px 1px 1px #000;
+  padding: 10px 0;
+  color: #3ff;
+}
+.posts-expand .post-meta {
+  margin: 3px 0 3px 0;
+}
+.post-nav-next post-nav-item,
+.post-nav-prev post-nav-item {
+  font-weight: bolder;
+}
+.nav-text {
+  font-family: Merriweather;
+}
+.post-body .post-meta {
+  font-family: Merriweather, "PT Serif", Georgia, "Times New Roman", STSong, serif;
 }
 @media screen and (min-width: 1200px) {
   body {
     background-image: url("/images/background.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-attachment: fixed;
     background-position: 50% 50%;
+    font-size: 18px;
+    font-family: Merriweather, "PT Serif", Georgia, "Times New Roman", STSong, serif;
   }
   #footer a {
     color: #eee;
+  }
+}
+.sidebar-inner affix-top {
+  border-radius: 5px;
+}
+@-webkit-keyframes Glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #00a67c, 0 0 70px #00a67c, 0 0 80px #00a67c, 0 0 100px #00a67c, 0 0 150px #00a67c;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #00a67c, 0 0 35px #00a67c, 0 0 40px #00a67c, 0 0 50px #00a67c, 0 0 75px #00a67c;
+  }
+}
+@-moz-keyframes Glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #00a67c, 0 0 70px #00a67c, 0 0 80px #00a67c, 0 0 100px #00a67c, 0 0 150px #00a67c;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #00a67c, 0 0 35px #00a67c, 0 0 40px #00a67c, 0 0 50px #00a67c, 0 0 75px #00a67c;
+  }
+}
+@-webkit-keyframes Glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #00a67c, 0 0 70px #00a67c, 0 0 80px #00a67c, 0 0 100px #00a67c, 0 0 150px #00a67c;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #00a67c, 0 0 35px #00a67c, 0 0 40px #00a67c, 0 0 50px #00a67c, 0 0 75px #00a67c;
+  }
+}
+@-o-keyframes Glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #00a67c, 0 0 70px #00a67c, 0 0 80px #00a67c, 0 0 100px #00a67c, 0 0 150px #00a67c;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #00a67c, 0 0 35px #00a67c, 0 0 40px #00a67c, 0 0 50px #00a67c, 0 0 75px #00a67c;
+  }
+}
+@keyframes Glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #00a67c, 0 0 70px #00a67c, 0 0 80px #00a67c, 0 0 100px #00a67c, 0 0 150px #00a67c;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #00a67c, 0 0 35px #00a67c, 0 0 40px #00a67c, 0 0 50px #00a67c, 0 0 75px #00a67c;
   }
 }
