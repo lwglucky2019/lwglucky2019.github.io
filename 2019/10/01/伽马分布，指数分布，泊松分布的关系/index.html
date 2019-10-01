@@ -86,17 +86,23 @@
 <meta property="og:site_name" content="WeiGuangLi">
 <meta property="og:description" content="1. 从意义上看： 指数分布解决的问题是“要等到一个随机事件发生，需要经历多久时间” 伽玛分布解决的问题是“要等到n个随机事件都发生，需要经历多久时间”   所以，伽玛分布可以看作是n个指数分布的独立随机变量的加总，即，n个Exponential(λ)random variables—-&amp;gt;Gamma(n,λ）   泊松分布解决的是“在特定时间里发生n个事件的机率”。  2. 公式 泊松分布">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/6634703-862afdcd180b16be.png?imageMogr2/auto-orient/strip|imageView2/2/w/876">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/6634703-10bf72920595432f.png?imageMogr2/auto-orient/strip|imageView2/2/w/872">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/6634703-302d184022c8c474.png?imageMogr2/auto-orient/strip|imageView2/2/w/1000">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/6634703-237a934ef3323e8f.png?imageMogr2/auto-orient/strip|imageView2/2/w/313">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/6634703-f414dba7ea80315f.png?imageMogr2/auto-orient/strip|imageView2/2/w/800">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/6634703-7cd31bcc5c6a9af0.png?imageMogr2/auto-orient/strip|imageView2/2/w/800">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/6634703-639573c05fb5dca7.png?imageMogr2/auto-orient/strip|imageView2/2/w/800">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/6634703-dfb95d602c2152e3.png?imageMogr2/auto-orient/strip|imageView2/2/w/1000">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/6634703-cc941351afe0f4e5.png?imageMogr2/auto-orient/strip|imageView2/2/w/511">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/6634703-6fa828517bb57343.png?imageMogr2/auto-orient/strip|imageView2/2/w/344">
-<meta property="og:updated_time" content="2019-10-01T07:22:48.809Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/6634703-bf72107e71a43dbb.png?imageMogr2/auto-orient/strip|imageView2/2/w/339">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/6634703-389c47c452a0480e.png?imageMogr2/auto-orient/strip|imageView2/2/w/1108">
+<meta property="og:updated_time" content="2019-10-01T07:30:56.074Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="伽马分布，指数分布，泊松分布的关系">
 <meta name="twitter:description" content="1. 从意义上看： 指数分布解决的问题是“要等到一个随机事件发生，需要经历多久时间” 伽玛分布解决的问题是“要等到n个随机事件都发生，需要经历多久时间”   所以，伽玛分布可以看作是n个指数分布的独立随机变量的加总，即，n个Exponential(λ)random variables—-&amp;gt;Gamma(n,λ）   泊松分布解决的是“在特定时间里发生n个事件的机率”。  2. 公式 泊松分布">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/6634703-10bf72920595432f.png?imageMogr2/auto-orient/strip|imageView2/2/w/872">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/6634703-862afdcd180b16be.png?imageMogr2/auto-orient/strip|imageView2/2/w/876">
 
 
 
@@ -373,24 +379,22 @@
 <h6><span id="2-公式">2. 公式</span></h6><ol>
 <li>泊松分布</li>
 </ol>
-<pre><code>![img1](https://upload-images.jianshu.io/upload_images/6634703-862afdcd180b16be.png?imageMogr2/auto-orient/strip|imageView2/2/w/876)
-</code></pre><blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/6634703-862afdcd180b16be.png?imageMogr2/auto-orient/strip|imageView2/2/w/876" alt="img1"></p>
+<blockquote>
 <p>上面就是泊松分布的公式。等号的左边，P 表示概率，N表示某种函数关系，t 表示时间，n 表示数量，1小时内出生3个婴儿的概率，就表示为 P(N(1) = 3) 。等号的右边，λ 表示事件的频率。</p>
 </blockquote>
 <ul>
-<li><p>接下来两个小时，一个婴儿都不出生的概率是0.25%，基本不可能发生。</p>
-<p>  <img src="https://upload-images.jianshu.io/upload_images/6634703-10bf72920595432f.png?imageMogr2/auto-orient/strip|imageView2/2/w/872" alt="img8"></p>
-</li>
+<li>接下来两个小时，一个婴儿都不出生的概率是0.25%，基本不可能发生。</li>
 </ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/6634703-10bf72920595432f.png?imageMogr2/auto-orient/strip|imageView2/2/w/872" alt="img8"></p>
 <ul>
 <li>接下来一个小时，至少出生两个婴儿的概率是80%。</li>
 </ul>
-<pre><code>![img7](https://upload-images.jianshu.io/upload_images/6634703-302d184022c8c474.png?imageMogr2/auto-orient/strip|imageView2/2/w/1000)
-</code></pre><ul>
-<li><p>泊松分布的图形</p>
-<p>  <img src="https://upload-images.jianshu.io/upload_images/6634703-237a934ef3323e8f.png?imageMogr2/auto-orient/strip|imageView2/2/w/313" alt="img6"></p>
-</li>
+<p><img src="https://upload-images.jianshu.io/upload_images/6634703-302d184022c8c474.png?imageMogr2/auto-orient/strip|imageView2/2/w/1000" alt="img7"></p>
+<ul>
+<li>泊松分布的图形</li>
 </ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/6634703-237a934ef3323e8f.png?imageMogr2/auto-orient/strip|imageView2/2/w/313" alt="img6"></p>
 <ol>
 <li>指数分布</li>
 </ol>
@@ -398,30 +402,26 @@
 <li><p>指数分布解决的问题是“要等到一个随机事件发生，需要经历多久时间”</p>
 </li>
 <li><p>指数分布的公式可以从泊松分布推断出来。如果下一个婴儿要间隔时间 t ，就等同于 t 之内没有任何婴儿出生。</p>
-<p>  <img src="https://upload-images.jianshu.io/upload_images/6634703-f414dba7ea80315f.png?imageMogr2/auto-orient/strip|imageView2/2/w/800" alt="img5"></p>
 </li>
 </ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/6634703-f414dba7ea80315f.png?imageMogr2/auto-orient/strip|imageView2/2/w/800" alt="img5"></p>
 <ul>
 <li>反过来，事件在时间 t 之内发生的概率，就是1减去上面的值。</li>
 </ul>
-<pre><code>![img4](https://upload-images.jianshu.io/upload_images/6634703-7cd31bcc5c6a9af0.png?imageMogr2/auto-orient/strip|imageView2/2/w/800)
-</code></pre><ul>
-<li><p>接下来15分钟，会有婴儿出生的概率是52.76%。</p>
-<p>  <img src="https://upload-images.jianshu.io/upload_images/6634703-639573c05fb5dca7.png?imageMogr2/auto-orient/strip|imageView2/2/w/800" alt="img3"></p>
-</li>
-</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/6634703-7cd31bcc5c6a9af0.png?imageMogr2/auto-orient/strip|imageView2/2/w/800" alt="img4"></p>
 <ul>
-<li><p>接下来的15分钟到30分钟，会有婴儿出生的概率是24.92%。</p>
-<p>  <img src="https://upload-images.jianshu.io/upload_images/6634703-dfb95d602c2152e3.png?imageMogr2/auto-orient/strip|imageView2/2/w/1000" alt="img2"></p>
-</li>
+<li>接下来15分钟，会有婴儿出生的概率是52.76%。</li>
 </ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/6634703-639573c05fb5dca7.png?imageMogr2/auto-orient/strip|imageView2/2/w/800" alt="img3"></p>
+<ul>
+<li>接下来的15分钟到30分钟，会有婴儿出生的概率是24.92%。</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/6634703-dfb95d602c2152e3.png?imageMogr2/auto-orient/strip|imageView2/2/w/1000" alt="img2"></p>
 <ul>
 <li>指数分布的图形</li>
 </ul>
-<pre><code>![img111](https://upload-images.jianshu.io/upload_images/6634703-cc941351afe0f4e5.png?imageMogr2/auto-orient/strip|imageView2/2/w/511)
-
-image.png
-</code></pre><blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/6634703-cc941351afe0f4e5.png?imageMogr2/auto-orient/strip|imageView2/2/w/511" alt="img111"></p>
+<blockquote>
 <p>可以看到，随着间隔时间变长，事件的发生概率急剧下降，呈指数式衰减。想一想，如果每小时平均出生3个婴儿，上面已经算过了，下一个婴儿间隔2小时才出生的概率是0.25%，那么间隔3小时、间隔4小时的概率，是不是更接近于0？</p>
 </blockquote>
 <ol>
@@ -431,26 +431,19 @@ image.png
 <li><p>伽玛分布解决的问题是“要等到n个随机事件都发生，需要经历多久时间”</p>
 </li>
 <li><p>公式</p>
-<p>  <img src="https://upload-images.jianshu.io/upload_images/6634703-6fa828517bb57343.png?imageMogr2/auto-orient/strip|imageView2/2/w/344" alt="img9"></p>
 </li>
 </ul>
-<blockquote>
-<p>这里a=n, 当a=1时，伽马分布就是指数分布，所以伽马分布就是n个指数分布的和</p>
-</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/6634703-6fa828517bb57343.png?imageMogr2/auto-orient/strip|imageView2/2/w/344" alt="img9"></p>
+<p> 这里a=n, 当a=1时，伽马分布就是指数分布，所以伽马分布就是n个指数分布的和</p>
 <ul>
 <li>期望和方差</li>
 </ul>
-<pre><code>![img10](https://upload-images.jianshu.io/upload_images/6634703-bf72107e71a43dbb.png?imageMogr2/auto-orient/strip|imageView2/2/w/339)
-
-image.png
-</code></pre><ul>
-<li><p>Gamma分布中的参数α称为形状参数（shape parameter），β称为</p>
-<p>  尺度参数</p>
-<p>  （scale parameter）。</p>
-</li>
+<p><img src="https://upload-images.jianshu.io/upload_images/6634703-bf72107e71a43dbb.png?imageMogr2/auto-orient/strip|imageView2/2/w/339" alt="img10"></p>
+<ul>
+<li>Gamma分布中的参数α称为形状参数（shape parameter），β称为尺度参数    （scale parameter）。</li>
 </ul>
-<pre><code>![img12](https://upload-images.jianshu.io/upload_images/6634703-389c47c452a0480e.png?imageMogr2/auto-orient/strip|imageView2/2/w/1108)
-</code></pre><h4><span id="参考">参考</span></h4><ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/6634703-389c47c452a0480e.png?imageMogr2/auto-orient/strip|imageView2/2/w/1108" alt="img12"></p>
+<h4><span id="参考">参考</span></h4><ol>
 <li><a href="https://www.zhihu.com/question/34866983" target="_blank" rel="noopener">https://www.zhihu.com/question/34866983</a></li>
 <li><a href="http://www.ruanyifeng.com/blog/2015/06/poisson-distribution.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2015/06/poisson-distribution.html</a></li>
 </ol>
