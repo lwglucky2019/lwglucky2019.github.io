@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="创建新项目 在github上创建新项目; 打开git bash; 进入工作目录； git clone 下来 或者 git init, git add . (加入所有文件) / 或者 git add (xx你要加入的文件) git config —gobal user.name XXXX ;  git config —gobal user.email xxx@xxxx 对于 clone 下来的项目，">
+<meta name="description" content="无约束的优化问题讲起，一般就是要使一个表达式取到最小值：   min f(x)如果问题是 $maxf(x) $也可以通过取反转化为求最小值$minf(x)$，这个是一个习惯。对于这类问题在高中就学过怎么做。只要对它的每一个变量求导，然后让偏导为零，解方程组就行了。  对 f(x)求极小值的流程就是：  随机选定$x_0$ 得到函数在$x_0$的梯度，然后从$x_0$向前走一步，计算式为：$x_0^">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git创建工程">
-<meta property="og:url" content="http://yoursite.com/2019/09/29/git创建工程/index.html">
+<meta property="og:title" content="拉格朗日乘子法和KKT条件">
+<meta property="og:url" content="http://yoursite.com/2019/10/03/拉格朗日乘子法和KKT条件/index.html">
 <meta property="og:site_name" content="WeiGuangLi">
-<meta property="og:description" content="创建新项目 在github上创建新项目; 打开git bash; 进入工作目录； git clone 下来 或者 git init, git add . (加入所有文件) / 或者 git add (xx你要加入的文件) git config —gobal user.name XXXX ;  git config —gobal user.email xxx@xxxx 对于 clone 下来的项目，">
+<meta property="og:description" content="无约束的优化问题讲起，一般就是要使一个表达式取到最小值：   min f(x)如果问题是 $maxf(x) $也可以通过取反转化为求最小值$minf(x)$，这个是一个习惯。对于这类问题在高中就学过怎么做。只要对它的每一个变量求导，然后让偏导为零，解方程组就行了。  对 f(x)求极小值的流程就是：  随机选定$x_0$ 得到函数在$x_0$的梯度，然后从$x_0$向前走一步，计算式为：$x_0^">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-29T07:22:03.170Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191003165420.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191003165801.png">
+<meta property="og:updated_time" content="2019-10-03T09:17:04.269Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git创建工程">
-<meta name="twitter:description" content="创建新项目 在github上创建新项目; 打开git bash; 进入工作目录； git clone 下来 或者 git init, git add . (加入所有文件) / 或者 git add (xx你要加入的文件) git config —gobal user.name XXXX ;  git config —gobal user.email xxx@xxxx 对于 clone 下来的项目，">
+<meta name="twitter:title" content="拉格朗日乘子法和KKT条件">
+<meta name="twitter:description" content="无约束的优化问题讲起，一般就是要使一个表达式取到最小值：   min f(x)如果问题是 $maxf(x) $也可以通过取反转化为求最小值$minf(x)$，这个是一个习惯。对于这类问题在高中就学过怎么做。只要对它的每一个变量求导，然后让偏导为零，解方程组就行了。  对 f(x)求极小值的流程就是：  随机选定$x_0$ 得到函数在$x_0$的梯度，然后从$x_0$向前走一步，计算式为：$x_0^">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191003165420.png">
 
 
 
@@ -119,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/29/git创建工程/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/03/拉格朗日乘子法和KKT条件/">
 
 
 
 
 
-  <title>git创建工程 | WeiGuangLi</title>
+  <title>拉格朗日乘子法和KKT条件 | WeiGuangLi</title>
   
 
 
@@ -264,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/29/git创建工程/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/03/拉格朗日乘子法和KKT条件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lwglucky">
@@ -281,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git创建工程</h1>
+          <h1 class="post-title" itemprop="name headline">拉格朗日乘子法和KKT条件</h1>
         
 
         <div class="post-meta">
@@ -293,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-29T12:48:59+08:00">
-                2019-09-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-03T16:41:56+08:00">
+                2019-10-03
               </time>
             
 
@@ -316,8 +319,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
+                  <a href="/categories/人工智能/" itemprop="url" rel="index">
+                    <span itemprop="name">人工智能</span>
                   </a>
                 </span>
 
@@ -353,21 +356,65 @@
       
 
       
-        <h3><span id="创建新项目">创建新项目</span></h3><ol>
-<li>在github上创建新项目;</li>
-<li>打开git bash;</li>
-<li>进入工作目录；</li>
-<li>git clone 下来</li>
-<li>或者 git init, git add . (加入所有文件) / 或者 git add (xx你要加入的文件)</li>
-<li>git config —gobal user.name XXXX ;  git config —gobal user.email xxx@xxxx</li>
-<li>对于 clone 下来的项目，使用 git remote set-url origin [url]   git 的服务器项目，或者 git remote rm origingit  ,  remote add origin [url]  , git remote add origin <a href="https://github.com/XXXXXX/MathInput.git" target="_blank" rel="noopener">https://github.com/XXXXXX/MathInput.git</a>           </li>
-<li>git commit -m “加入注释说明”</li>
-<li>git push   或者（git push -u origin master）</li>
-<li>git pull <a href="https://github.com/youraccount/yourproject.git" target="_blank" rel="noopener">https://github.com/youraccount/yourproject.git</a>  (把项目的git配置拉下来)</li>
+        <p>无约束的优化问题讲起，一般就是要使一个表达式取到最小值： </p>
+<script type="math/tex; mode=display">
+min f(x)</script><p>如果问题是 $maxf(x) $也可以通过取反转化为求最小值$minf(x)$，这个是一个习惯。对于这类问题在高中就学过怎么做。只要对它的每一个变量求导，然后让偏导为零，解方程组就行了。 </p>
+<p>对 <em>f</em>(<em>x</em>)求极小值的流程就是：</p>
+<ol>
+<li>随机选定$x_0$</li>
+<li><p>得到函数在$x_0$的梯度，然后从$x_0$向前走一步，计算式为：$x_0^{new}= x_o^{old}−α∇f(x)$</p>
+</li>
+<li><p>重复第 2 步，直到梯度接近于迭代上限。</p>
+</li>
 </ol>
-<p>如果 git clone总是失败， git config —global http.postBuffer 524288000 设置幻从去大小</p>
-<hr>
-<h2><span id>#</span></h2>
+<p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191003165420.png" alt="vvv"></p>
+<p>然后就是进一步的，我们可能要在满足一定约束条件的情况下最小化目标函数，比如有一个等式约束： </p>
+<script type="math/tex; mode=display">
+min f(x) \\
+s.t. h(x)=0</script><p>解决这个的时候问题不能先用上面的方法求出 <em>f</em>(<em>x</em>) 的极值点，然后留下满足方程 <em>h</em>(<em>x</em>)=0 的。因为这个问题的解可能根本不是$minf(x)$ 的解，它们是没有关系的。那么还是要从问题本身去找线索：</p>
+<p>满足条件的极值点一定满足：∇<em>f</em>(<em>x</em>,<em>y</em>)=<em>λ</em>∇<em>h</em>(<em>x</em>,<em>y</em>).为了方便和好记，就把原来的优化问题写成 $f(x,y)+λh(x,y)$的形式，然后分别对 <em>λ</em>,<em>x</em>,<em>y</em>求偏导，并且令偏导为 0 就行了，和之前得到的方程组是一样的。这种方法叫拉格朗日乘数法。    </p>
+<p>这里的平面和球面分别代表了两个约束 <em>h</em>1(<em>x</em>)<em>h</em>2(<em>x</em>)，那么这个问题的可行域就是它们相交的那个圆。这里蓝色箭头表示平面的梯度，黑色箭头表示球面的梯度，那么相交的圆的梯度就是它们的线性组合（只是直观上的），所以在极值点的地方目标函数的梯度和约束的梯度的线性组合在一条直线上。所以就满足：</p>
+<script type="math/tex; mode=display">
+\nabla f(x) = \lambda \mu_i \nabla h_i(x) = \sum \limits _{i=1}^2 \lambda _i \nabla h_i(x)\\
+h_1(x) =0\\
+h_2(x)=0</script><p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191003165801.png" alt="sdfe"></p>
+<p>阴影部分就是可行域，也就是说可行域从原来的一条线变成了一块区域。那么能取到极值点的地方可能有两种情况：</p>
+<ul>
+<li>还是在<em>h</em>(<em>x</em>) 和 等值线相切的地方</li>
+<li>f(x) 的极值点本身就在可行域里面。</li>
+</ul>
+<p>因为如果不是相切，那么同样的，对任意一个在可行域中的点，如果在它附近往里走或者往外走，<em>f</em>(<em>x</em>)一般都会变大或者变小，所以绝大部分点都不会是极值点。除非这个点刚好在交界处，且和等值线相切；或者这个点在可行域内部，但是本身就是 <em>f</em>(<em>x</em>)的极值点。</p>
+<p>对于第一种情况，不等式约束就变成等式约束了，对$f(x)+λh(x)+μg(x)$用拉格朗日乘子法：</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\begin{aligned}
+\nabla(x) +\lambda\nabla h(x)+\mu \nabla g(x) = 0\\
+h(x) = 0 \\
+g(x)= 0\\
+\mu \ge 0 
+\end{aligned}
+\end{equation}</script><p>这里需要解释一下，为什么不是 <em>μ</em>≠0而是 <em>μ</em>≥0。后面的约束比前面的更强。看“不等式约束”那个图，我们已经知道了问题中的可行域是在 <em>g</em>(<em>x</em>)≤0 一侧，而 <em>g</em>(<em>x</em>)的梯度是指向大于 0 的一侧，也就是不是可行域的一侧。而求的问题是极小值，所以 <em>f</em>(<em>x</em>)在交点处的梯度是指向可行域的一侧，也就是说两个梯度一定是相反的。所以也就可以确定这里的系数一定是大于 0 的。而等式约束由于不知道 <em>h</em>(<em>x</em>)的梯度方向，所以对它没有约束，那么为什么 <em>μ</em> 还能等于 0 呢，因为极值点可能刚好在 <em>g</em>(<em>x</em>) 上。</p>
+<h2><span id="kkt条件karushkuhntucker-conditions">KKT条件(Karush–Kuhn–Tucker conditions)</span></h2><p>对于第二种情况，不等式约束就相当于没有，对 <em>f</em>(<em>x</em>)+λh(x) 用拉格朗日乘子法： </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\nabla(x) +\lambda \nabla h(x)+= 0 \\
+h(x) = 0 \\
+g(x) \le 0
+\end{aligned}</script><p>最好把两种情况用同一组方程表示出来。对比一下两个问题，不同的是第一种情况中有 $\mu \ge 0$且 g(x)=0, 第二种情况μ=0,g(x)≤0,综合两种情况,可以写成:μg(x)=0且μ≥0且g(x)≤0:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\nabla(x) +\lambda\nabla h(x)+\mu \nabla g(x) = 0\\
+\mu g(x)= 0\\
+\mu \ge 0 \\
+h(x) = 0 \\
+g(x) \le 0
+\end{aligned}</script><p>这个就是 KKT 条件。它的含义是这个优化问题的极值点一定满足这组方程组。（不是极值点也可能会满足，但是不会存在某个极值点不满足的情况）它也是原来的优化问题取得极值的必要条件，解出来了极值点之后还是要代入验证的。但是因为约束比较多，情况比较复杂，KKT条件并不是对于任何情况都是满足的。要满足 KKT 条件需要有一些规范性条件(Regularity conditions），就是要求约束条件的质量不能太差，常见的比如：</p>
+<ol>
+<li>LCQ：如果 <em>h</em>(<em>x</em>),<em>g</em>(<em>x</em>)都是形如, Ax+b的仿射函数，那么极值一定满足 KKT 条件。</li>
+<li>LICQ：起作用的 <em>g</em>(<em>x</em>) 函数（即<em>g</em>(<em>x</em>)相当于等式约束的情况）和<em>h</em>(<em>x</em>)函数在极值点处的梯度要线性无关，那么极值一定满足 KKT 条件。</li>
+<li>Slater 条件：如果优化问题是个凸优化问题，且至少存在一个点满足 <em>h</em>(<em>x</em>)=0和<em>g</em>(<em>x</em>)=0,极值一定满足 KKT 条件。并且满足强对偶性质。</li>
+</ol>
+
       
     </div>
     
@@ -391,8 +438,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/29/数学公式输入法/" rel="next" title="数学公式输入法">
-                <i class="fa fa-chevron-left"></i> 数学公式输入法
+              <a href="/2019/10/01/伽马分布，指数分布，泊松分布的关系/" rel="next" title="伽马分布，指数分布，泊松分布的关系">
+                <i class="fa fa-chevron-left"></i> 伽马分布，指数分布，泊松分布的关系
               </a>
             
           </div>
@@ -400,10 +447,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/01/伽马分布，指数分布，泊松分布的关系/" rel="prev" title="伽马分布，指数分布，泊松分布的关系">
-                伽马分布，指数分布，泊松分布的关系 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -535,7 +578,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">创建新项目</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number"></span> <span class="nav-text">#</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">KKT条件(Karush–Kuhn–Tucker conditions)</span></a></li></ol></div>
             
 
           </div>
