@@ -79,20 +79,19 @@
 
 
 
-<meta name="description" content="单应(Homography)是射影几何中的概念，又称为射影变换。它把一个射影平面上的点(三维齐次矢量)映射到另一个射影平面上，并且把直线映射为直线，具有保线性质。总的来说，单应是关于三维齐次矢量的一种线性变换，可以用一个3×3的非奇异矩阵H表示:  x_1 = Hx_2这是一个齐次坐标的等式，H乘以一个非零的比例因子上述等式仍然成立，即3×3齐次矩阵，具有8个未知量。假设已经取得了两图像之间的单应">
+<meta name="description" content="安装必要的库更新源sudo apt-get updatesudo apt-get upgradesudo rpi-updatesudo reboot 安装库sudo apt-get -y install build-essential git cmake pkg-configsudo apt-get -y install libjpeg8-devsudo apt-get -y install li">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图像单应性">
-<meta property="og:url" content="http://yoursite.com/2019/10/07/图像单应性/index.html">
+<meta property="og:title" content="OpenCV在树莓派上的安装">
+<meta property="og:url" content="http://yoursite.com/2019/10/13/OpenCV在树莓派上的安装/index.html">
 <meta property="og:site_name" content="WeiGuangLi">
-<meta property="og:description" content="单应(Homography)是射影几何中的概念，又称为射影变换。它把一个射影平面上的点(三维齐次矢量)映射到另一个射影平面上，并且把直线映射为直线，具有保线性质。总的来说，单应是关于三维齐次矢量的一种线性变换，可以用一个3×3的非奇异矩阵H表示:  x_1 = Hx_2这是一个齐次坐标的等式，H乘以一个非零的比例因子上述等式仍然成立，即3×3齐次矩阵，具有8个未知量。假设已经取得了两图像之间的单应">
+<meta property="og:description" content="安装必要的库更新源sudo apt-get updatesudo apt-get upgradesudo rpi-updatesudo reboot 安装库sudo apt-get -y install build-essential git cmake pkg-configsudo apt-get -y install libjpeg8-devsudo apt-get -y install li">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191007163300.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191007164032.png">
-<meta property="og:updated_time" content="2019-10-07T09:34:45.218Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191013165556.png">
+<meta property="og:updated_time" content="2019-10-13T09:00:05.137Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="图像单应性">
-<meta name="twitter:description" content="单应(Homography)是射影几何中的概念，又称为射影变换。它把一个射影平面上的点(三维齐次矢量)映射到另一个射影平面上，并且把直线映射为直线，具有保线性质。总的来说，单应是关于三维齐次矢量的一种线性变换，可以用一个3×3的非奇异矩阵H表示:  x_1 = Hx_2这是一个齐次坐标的等式，H乘以一个非零的比例因子上述等式仍然成立，即3×3齐次矩阵，具有8个未知量。假设已经取得了两图像之间的单应">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191007163300.png">
+<meta name="twitter:title" content="OpenCV在树莓派上的安装">
+<meta name="twitter:description" content="安装必要的库更新源sudo apt-get updatesudo apt-get upgradesudo rpi-updatesudo reboot 安装库sudo apt-get -y install build-essential git cmake pkg-configsudo apt-get -y install libjpeg8-devsudo apt-get -y install li">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191013165556.png">
 
 
 
@@ -122,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/10/07/图像单应性/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/13/OpenCV在树莓派上的安装/">
 
 
 
 
 
-  <title>图像单应性 | WeiGuangLi</title>
+  <title>OpenCV在树莓派上的安装 | WeiGuangLi</title>
   
 
 
@@ -267,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/07/图像单应性/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/13/OpenCV在树莓派上的安装/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lwglucky">
@@ -284,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">图像单应性</h1>
+          <h1 class="post-title" itemprop="name headline">OpenCV在树莓派上的安装</h1>
         
 
         <div class="post-meta">
@@ -296,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-07T16:14:31+08:00">
-                2019-10-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-13T09:38:33+08:00">
+                2019-10-13
               </time>
             
 
@@ -306,6 +305,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/树莓派/" itemprop="url" rel="index">
+                    <span itemprop="name">树莓派</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -334,48 +355,12 @@
       
 
       
-        <p><strong>单应(Homography)</strong>是射影几何中的概念，又称为射影变换。它把一个射影平面上的点(三维齐次矢量)映射到另一个射影平面上，并且把直线映射为直线，具有保线性质。总的来说，单应是关于三维齐次矢量的一种线性变换，可以用一个3×3的非奇异矩阵<em>H</em>表示:</p>
-<script type="math/tex; mode=display">
-x_1 = Hx_2</script><p>这是一个齐次坐标的等式，<em>H</em>乘以一个非零的比例因子上述等式仍然成立，即3×3齐次矩阵，具有8个未知量。假设已经取得了两图像之间的单应，则可单应矩阵<em>H</em>可以将两幅图像关联起来:</p>
-<script type="math/tex; mode=display">
-\left(\begin{array}{c}u_1\\v_1\\1\end{array}\right) = H\left(\begin{array}{c}u_2\\v_2\\1\end{array}\right)</script><p>其中，(<em>u</em>1,<em>v</em>1,1)<em>T</em>表示图像1中的像点，(<em>u</em>2,<em>v</em>2,1)<em>T</em>是图像2中的像点，也就是可以通过单应矩阵<em>H</em>将图像2变换到图像1，如下图。这有了很多实际的应用，例如图像的校正、对齐以及在SLAM中估计两个相机间的运动。</p>
-<h2><span id="同一相机在不同的位姿得到同一平面的图像">同一相机在不同的位姿得到同一平面的图像</span></h2><p>假设使用同一相机在不同的位姿拍摄同一平面，如下图：</p>
-<center> 
-<img style="border-radius: 1em; " src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191007163300.png">
-<br>
-<div style="font-weight:bold; border-bottom: 1px solid #d9d9d9;
-display: inline-block;
-padding: 2px;">同一相机在不同的位姿拍摄同一平面.</div>
-</center>
-
-<p>上图表示场景中的平面π在两相机的成像，设平面π在第一个相机坐标系下的单位法向量为N，其到第一个相机中心（坐标原点）的距离为d，则平面π可表示为：</p>
-<script type="math/tex; mode=display">
-N^TX_1 = d</script><p>即 $ \frac{1}{d}N^TX_1 = 1,\forall X_1 \in \pi $<br>X1是三维点P在第一相机坐标系下的坐标，其在第二个相机坐标系下的坐标为X2，则:</p>
-<script type="math/tex; mode=display">
-X_2 = RX_1 + T</script><p>上面式子结合起来:</p>
-<script type="math/tex; mode=display">
-X_2 = RX_1 + T\frac{1}{d}N^TX_1=(R+T\frac{1}{d}N^T)X_1=H'X_1</script><p>就得到了同一平面两个不同相机坐标系的单应矩阵:</p>
-<script type="math/tex; mode=display">
-H' = R+T\frac{1}{d}N^T</script><p>上面提到单应表示的是两个平面之间的映射，这里为何得到了同一平面两个不同相机坐标系的单应矩阵。虽然平面是通过，但是在不同坐标系中会有不同的表示，单应也是将平面从一个位置映射到另一个位置，并保持其某些性质不变，例如保线性。<br>上面得到的单应矩阵第一个相机坐标系取得，还需要将其变换到成像平面坐标系中，取得两图像间的单应矩阵。设x1,x2为P在两图像的像点坐标:</p>
-<script type="math/tex; mode=display">
-x_1 = KX_1,x_2 = KX_2</script><p>K是相机的内参数，代入上面求得单应变换公式:</p>
-<script type="math/tex; mode=display">
-K^{-1}x_2 = HK^{-1}x_1 \Longrightarrow x_2 = KH'K^{-1}x_1=K(R+T\frac{1}{d}N^T)K^{-1}x_1</script><p>同一平面得到的两个图像间的单应矩阵H为:</p>
-<script type="math/tex; mode=display">
-H = K(R+T\frac{1}{d}N^T)K^{-1}  \tag{1}</script><h2><span id="平面的单应和对极约束的区别">平面的单应和对极约束的区别</span></h2><p>两图像间的单应矩阵后，有什么作用呢？它和两幅图像间的对极约束有何区别?<br>两图像间的对极约束和场景的结构无关，也就是说对极约束对于任意场景结构的两幅图像都是成立的，不能给出两幅图像上的像点的一一对应关系，只能给出点对应的必要条件，另一幅图像上与图像上对应的像点在位于对应的对极线上。基础矩阵F描述的实际是一种点和直线的映射关系，而不是一种点对点的约束关系，并不能给出另一个点的确切位置。<br>平面间的单应，并不像对极约束完全不需要场景的结构信息，它对场景的结构有了要求：场景的点必须在同一个平面上，因此单应矩阵H<br>也就能够对两图像上对应点的提供更多的约束，知道了某点在一幅图像的像点位置后，可以通过单应矩阵，求得其在另一幅图像中像点的确切位置。<br>也就说，三维点如果不是在同一个平面上，可以使用基础矩阵F来计算图像上像点在另一幅图像上对应的对极线，而不能使用单应矩阵H得到对应点的确切位置。但如果在这种情况下，仍使用单应矩阵H计算对应点的位置，其结果会如何呢，如下图:</p>
-<center> 
-<img style="border-radius: 1em; " src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191007164032.png">
-<br>
-<div style="font-weight:bold; border-bottom: 1px solid #d9d9d9;
-display: inline-block;
-padding: 2px;">平面的单应和对极约束</div>
-</center>
-
-<p>相机只有旋转无平移下的单应: 显然公式（1）中的T=0,有：</p>
-<script type="math/tex; mode=display">
-H = K(R)K^{-1}  \tag{2}</script><h2><span id="通过匹配的点对计算单应矩阵">通过匹配的点对计算单应矩阵</span></h2><p>两图像上的像点p1(x1,y1),p2(x2,y2)是一对匹配的点对，其单应矩阵为H，则有：</p>
-<script type="math/tex; mode=display">
-\left(\begin{array}{c}x_2\\y_2\\1\end{array}\right)=\left(\begin{array}{ccc}H_{11}&H_{12}&H_{13}\\H_{21}&H_{22}&H_{23}\\H_{31}&H_{32}&H_{33}\end{array}\right)\left(\begin{array}{c}x_1\\y_1\\1\end{array}\right)\Leftrightarrow p_2= Hp_1</script><h3><span id="参考文献">参考文献:</span></h3><p><a href="https://www.cnblogs.com/wangguchangqing/p/8287585.html" target="_blank" rel="noopener">https://www.cnblogs.com/wangguchangqing/p/8287585.html</a></p>
+        <h2><span id="安装必要的库">安装必要的库</span></h2><h4><span id="更新源">更新源</span></h4><p>sudo apt-get update<br>sudo apt-get upgrade<br>sudo rpi-update<br>sudo reboot</p>
+<h4><span id="安装库">安装库</span></h4><p>sudo apt-get -y install build-essential git cmake pkg-config<br>sudo apt-get -y install libjpeg8-dev<br>sudo apt-get -y install libtiff5-dev<br>sudo apt-get -y install libjasper-dev<br>sudo apt-get -y install libpng12-dev<br>sudo apt-get -y install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev<br>sudo apt-get -y install libgtk2.0-dev<br>sudo apt-get -y install libsdl2-dev<br>sudo apt-get -y install libatlas-base-dev gfortran<br>sudo apt-get -y install libxvidcore-dev libx264-dev</p>
+<h2><span id="获取-opencv代码">获取  opencv代码</span></h2><p>git clone <a href="https://github.com/opencv/opencv.git" target="_blank" rel="noopener">https://github.com/opencv/opencv.git</a><br>git clone <a href="https://github.com/opencv/opencv_contrib.git" target="_blank" rel="noopener">https://github.com/opencv/opencv_contrib.git</a><br>如果总是下载到一半就中断，加入 —depth=1参数,比如：<br>git clone <a href="https://github.com/opencv/opencv.git" target="_blank" rel="noopener">https://github.com/opencv/opencv.git</a> —depth=1</p>
+<h2><span id="将-opencv_contrib-目录拷贝到-opencv目录">将 opencv_contrib 目录拷贝到 opencv目录</span></h2><p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191013165556.png" alt="aa"><br>创建 build目录，并 cd build</p>
+<h2><span id="编译">编译</span></h2><p>cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local ..<br>没有错误就可以编译，如果有错误，就一一修正。有可能需要安装 ffmpeg支持 mpeg 视频流。 ffmpeg可以github上下载安装。<br>然后<br> make -j4<br> sudo make install<br> sudo ldconfig </p>
+<h2><span id="测试">测试</span></h2><p> python<br> import cv2</p>
 
       
     </div>
@@ -400,8 +385,8 @@ H = K(R)K^{-1}  \tag{2}</script><h2><span id="通过匹配的点对计算单应�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/04/隐马尔科夫模型学习/" rel="next" title="隐马尔科夫模型学习">
-                <i class="fa fa-chevron-left"></i> 隐马尔科夫模型学习
+              <a href="/2019/10/11/泛函与变分初步/" rel="next" title="泛函与变分初步">
+                <i class="fa fa-chevron-left"></i> 泛函与变分初步
               </a>
             
           </div>
@@ -409,10 +394,6 @@ H = K(R)K^{-1}  \tag{2}</script><h2><span id="通过匹配的点对计算单应�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/11/泛函与变分初步/" rel="prev" title="泛函与变分初步">
-                泛函与变分初步 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -544,7 +525,7 @@ H = K(R)K^{-1}  \tag{2}</script><h2><span id="通过匹配的点对计算单应�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">同一相机在不同的位姿得到同一平面的图像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">平面的单应和对极约束的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">通过匹配的点对计算单应矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">3.1.</span> <span class="nav-text">参考文献:</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">安装必要的库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.1.</span> <span class="nav-text">更新源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.2.</span> <span class="nav-text">安装库</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">获取  opencv代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">将 opencv_contrib 目录拷贝到 opencv目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">5.</span> <span class="nav-text">测试</span></a></li></div>
             
 
           </div>
