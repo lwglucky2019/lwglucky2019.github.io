@@ -79,22 +79,23 @@
 
 
 
-<meta name="description" content="特征脸 特征脸方法利用主分量分析进行降维和提取特征。主分量分析是一种应用十分广泛的数据降维技术，该方法选择与原数据协方差矩阵前几个最大特征值对应的特征向量构成一组基，以达到最佳表征原数据的目的。因为由主分量分析提取的特征向量返回成图像时，看上去仍像人脸，所以这些特征向量被称为“特征脸”。 在人脸识别中，由一组特征脸基图象张成一个特征脸子空间，任何一幅人脸图象（减去平均人脸后）都可投影到该子空间，得">
+<meta name="description" content="采样算法统计模拟中有一个重要的问题就是给定一个概率分布p(x)，我们如何在计算机中生成它的样本。常见的概率分布，无论是连续的还是离散的分布，都可以基于Uniform(0,1) 的样本生成。例如正态分布可以通过著名的 Box-Muller 变换得到：  \begin{aligned} Z_0 &amp; = \sqrt{-2\ln U_1} cos(2\pi U_2) \\ Z_1 &amp; = \sqrt{-2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="人脸识别原理简述">
-<meta property="og:url" content="http://yoursite.com/2019/10/14/人脸识别原理简述/index.html">
+<meta property="og:title" content="MCMC和Gibbs采样">
+<meta property="og:url" content="http://yoursite.com/2019/10/15/MCMC和Gibbs采样/index.html">
 <meta property="og:site_name" content="WeiGuangLi">
-<meta property="og:description" content="特征脸 特征脸方法利用主分量分析进行降维和提取特征。主分量分析是一种应用十分广泛的数据降维技术，该方法选择与原数据协方差矩阵前几个最大特征值对应的特征向量构成一组基，以达到最佳表征原数据的目的。因为由主分量分析提取的特征向量返回成图像时，看上去仍像人脸，所以这些特征向量被称为“特征脸”。 在人脸识别中，由一组特征脸基图象张成一个特征脸子空间，任何一幅人脸图象（减去平均人脸后）都可投影到该子空间，得">
+<meta property="og:description" content="采样算法统计模拟中有一个重要的问题就是给定一个概率分布p(x)，我们如何在计算机中生成它的样本。常见的概率分布，无论是连续的还是离散的分布，都可以基于Uniform(0,1) 的样本生成。例如正态分布可以通过著名的 Box-Muller 变换得到：  \begin{aligned} Z_0 &amp; = \sqrt{-2\ln U_1} cos(2\pi U_2) \\ Z_1 &amp; = \sqrt{-2">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/人脸识别_平均脸.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/人脸识别_平均脸1.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/人脸识别_平均脸2.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/人脸识别_平均脸3.png">
-<meta property="og:updated_time" content="2019-10-14T03:50:02.879Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191015150540.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191015151041.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191015151210.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191015153027.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191015153236.png">
+<meta property="og:updated_time" content="2019-10-15T10:30:07.495Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="人脸识别原理简述">
-<meta name="twitter:description" content="特征脸 特征脸方法利用主分量分析进行降维和提取特征。主分量分析是一种应用十分广泛的数据降维技术，该方法选择与原数据协方差矩阵前几个最大特征值对应的特征向量构成一组基，以达到最佳表征原数据的目的。因为由主分量分析提取的特征向量返回成图像时，看上去仍像人脸，所以这些特征向量被称为“特征脸”。 在人脸识别中，由一组特征脸基图象张成一个特征脸子空间，任何一幅人脸图象（减去平均人脸后）都可投影到该子空间，得">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/人脸识别_平均脸.png">
+<meta name="twitter:title" content="MCMC和Gibbs采样">
+<meta name="twitter:description" content="采样算法统计模拟中有一个重要的问题就是给定一个概率分布p(x)，我们如何在计算机中生成它的样本。常见的概率分布，无论是连续的还是离散的分布，都可以基于Uniform(0,1) 的样本生成。例如正态分布可以通过著名的 Box-Muller 变换得到：  \begin{aligned} Z_0 &amp; = \sqrt{-2\ln U_1} cos(2\pi U_2) \\ Z_1 &amp; = \sqrt{-2">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191015150540.png">
 
 
 
@@ -124,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/10/14/人脸识别原理简述/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/15/MCMC和Gibbs采样/">
 
 
 
 
 
-  <title>人脸识别原理简述 | WeiGuangLi</title>
+  <title>MCMC和Gibbs采样 | WeiGuangLi</title>
   
 
 
@@ -269,7 +270,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/14/人脸识别原理简述/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/15/MCMC和Gibbs采样/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lwglucky">
@@ -286,7 +287,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">人脸识别原理简述</h1>
+          <h1 class="post-title" itemprop="name headline">MCMC和Gibbs采样</h1>
         
 
         <div class="post-meta">
@@ -298,8 +299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-14T11:40:59+08:00">
-                2019-10-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-15T14:58:25+08:00">
+                2019-10-15
               </time>
             
 
@@ -358,23 +359,71 @@
       
 
       
-        <h2><span id="特征脸">特征脸</span></h2><p> 特征脸方法利用主分量分析进行降维和提取特征。主分量分析是一种应用十分广泛的数据降维技术，该方法选择与原数据协方差矩阵前几个最大特征值对应的特征向量构成一组基，以达到最佳表征原数据的目的。因为由主分量分析提取的特征向量返回成图像时，看上去仍像人脸，所以这些特征向量被称为“特征脸”。</p>
-<p>在人脸识别中，由一组特征脸基图象张成一个特征脸子空间，任何一幅人脸图象（减去平均人脸后）都可投影到该子空间，得到一个权值向量。计算此向量和训练集中每个人的权值向量之间的欧式距离，取最小距离所对应的人脸图像的身份作为测试人脸图像的身份。</p>
-<p>下图给出了主分量分析的应用例子。图中最左边的为平均脸，其他地为对应 7 个最大特征值的特征向量。<br><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/人脸识别_平均脸.png" alt="11"><br><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/人脸识别_平均脸1.png" alt="22"></p>
-<p>主分量分析是一种无监督学习方法，主分量是指向数据能量分布最大的轴线方向，因此可以从最小均方误差意义下对数据进行最优的表达。但是就分类任务而言，由主分量分析得到的特征却不能保证可以将各个类别最好地区分开来。</p>
-<p>线性鉴别分析是一种著名的模式识别方法，通过将样本线性变换到一个新的空间，使样本的类内散布程度达到最小，同时类间散布程度达到最大，即著名的 Fisher 准则。<br><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/人脸识别_平均脸2.png" alt="33"></p>
-<h2><span id="弹性图匹配">弹性图匹配</span></h2><p>Lades 等人针对畸变不变性的物体识别问题提出了一种基于动态连接结构的弹性图匹配方法，并将其应用于人脸识别。所有人脸图像都有相似的拓扑结构。人脸都可表示成图，图中的节点是一些基准点（如眼睛，鼻尖等），图中的边是这些基准点之间的连线。</p>
-<p>每个节点包含 40 个 Gabor 小波（一种数字信号变换方法）系数，包括相位和幅度，这些系数合起来称为一个 Jet ，这些小波系数是原始图像和一组具有 5 个频率、 8 个方向的 Gabor 小波卷积（一种数字信号处理算子）得到的。这样每幅图就像被贴了标签一样，其中的点被 Jets 标定，边被点之间的距离标定。所以一张人脸的几何形状就被编码为图中的边，而灰度值的分布被编码为图中的节点。如下图所示：<br><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/人脸识别_平均脸3.png" alt="44"><br>为了识别一张新的人脸，需要从该人脸中找到基准点，提取出一个人脸图，这可用弹性图匹配得到。弹性图匹配的目的是在新的人脸中找到基准点，并且提取出一幅图，这幅图和现有的人脸束图之间的相似度最大。经过弹性图匹配后，新的人脸的图就被提取出来了，此图就表征了新的人脸，用它作为特征进行识别。进行识别时，计算测试人脸和现有人脸束图中的所有人脸之间的相似度，相似度最大的人脸的身份即为测试人脸的身份。</p>
-<p>由于该方法利用 Gabor 小波变换来描述面部特征点的局部信息，因此受光照影响较小。此外，在弹性匹配的过程中，网格的形状随着特征点的搜索而不断变化，因此对姿态的变化也具有一定的自适应性。该方法的主要缺点是搜索过程中代价函数优化的计算量巨大，因而造成识别速度较慢，导致该方法的实用性不强。</p>
-<h2><span id="基于视频图像的识别算法">基于视频图像的识别算法</span></h2><p>一个典型的基于视频图像的人脸识别系统一般都是自动检测人脸区域，从视频中提取特征，最后如果人脸存在则识别出人脸的身份。在视频监控、信息安全和出入控制等应用中，基于视频的人脸识别是一个非常重要的问题，也是目前人脸识别的一个热点和难点。基于视频比基于静态图像更具优越性，因为 Bruce 等人和 Knight 等人已证明，当人脸被求反或倒转时，运动信息有助于（熟悉的）人脸的识别。虽然视频人脸识别是基于静态图像的人脸识别的直接扩展，但一般认为视频人脸识别算法需要同时用到空间和时间信息，这类方法直到近几年才开始受到重视并需要进一步的研究和发展。目前视频人脸识别还有很多困难和挑战，具体来说有以下几种：</p>
-<p>视频图像质量比较差：视频图像一般是在户外（或室内，但是采集条件比较差）获取的，通常没有用户的配合，所以视频人脸图像经常会有很大的光照和姿态变化。另外还可能会有遮挡和伪装。</p>
-<p>人脸图像比较小：同样，由于采集条件比较差，视频人脸图像一般会比基于静态图像的人脸识别系统的预设尺寸小。小尺寸的图像不但会影响识别算法的性能，而且还会影响人脸检测，分割和关键点定位的精度，这必然会导致整个人脸识别系统性能的下降。</p>
-<p>视频人脸识别起源于基于静态图像的人脸识别，即识别系统自动的检测和分割出人脸，然后用基于静态图像的识别方法进行识别。对这类方法的一个提高是加入了人脸跟踪。在这类系统中，通过利用姿态和从视频中估计到的深度信息合成一个虚拟的正面人脸。这个阶段的另外一个能提高识别率的方法是利用视频中充裕的帧图像，基于每帧图像的识别结果，使用 ” 投票 ” 机制。投票方法可以是确定的，但是概率投票方法一般来说更好。投票机制的一个缺点是计算结果的代价比较昂贵。</p>
-<p>视频人脸识别的第二个发展阶段是利用多模态信息。因为人类一般会利用多种信息识别人的身份，所以一个多模态系统将比只利用人脸的识别系统性能更好。更重要的是利用多模态信息提供了一种方法，它能全面解决那些只靠人脸无法识别的任务。例如，在一个完全没有配合的环境（比如抢劫），歹徒的脸一般是蒙着的，这时唯一能进行无人脸识别的方法就是分析歹徒躯体的运动特性。除了指纹，人脸和声音是最常用于身份识别的信息。它们已经被用于很多多模态身份识别系统。 1997 年以来，每两年，就会召开一个专门关于基于视频和语音身份识别的国际会议。</p>
-<p>最近几年，视频人脸识别进入第三个发展阶段，这个阶段方法的特点是同时采用空间信息（在每帧中）和时间信息（比如人脸特征的运动轨迹）。区别于概率投票方法的一个很大的不同之处在于，此类方法是在时间和空间的联合空间中描述人脸和识别人脸的。</p>
-<p>视频图像的一个非常重要的特性是它的时间连续性，以及由此产生的人脸信息的不确定性。在人脸跟踪和识别中利用时间信息是视频人脸识别算法和基于静态图像的人脸识别算法的最大区别。目前这类算法大致可分为两类：</p>
-<p>1、 跟踪 - 然后 - 识别，这类方法首先检测出人脸，然后跟踪人脸特征随时间的变化。当捕捉到一帧符合一定标准（大小，姿势）的图像时，用基于静态图像的人脸识别算法进行识别。这类方法中跟踪和识别是单独进行的，时间信息只在跟踪阶段用到。识别还是采用基于静态图像的方法，没用到时间信息。</p>
-<p>2、 跟踪 - 且 - 识别，这类方法中，人脸跟踪和识别是同时进行的，时间信息在跟踪阶段和识别阶段都用到。</p>
+        <h2><span id="采样算法">采样算法</span></h2><p>统计模拟中有一个重要的问题就是给定一个概率分布p(x)，我们如何在计算机中生成它的样本。<br>常见的概率分布，无论是连续的还是离散的分布，都可以基于Uniform(0,1) 的样本生成。例如正态分布可以通过著名的 Box-Muller 变换得到：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+Z_0 & = \sqrt{-2\ln U_1} cos(2\pi U_2) \\
+Z_1 & = \sqrt{-2\ln U_1} sin(2\pi U_2)
+\end{aligned}</script><p>则 Z0,Z1 独立且服从标准正态分布。<br>其它几个著名的连续分布，包括指数分布、Gamma 分布、t 分布、F 分布、Beta 分布、Dirichlet 分布等等, 也都可以通过类似的数学变换得到；离散的分布通过均匀分布更加容易生成。更多的统计分布如何通过均匀分布的变换生成出来，大家可以参考统计计算的书，其中 Sheldon M. Ross 的《统计模拟》是写得非常通俗易懂的一本。<br>当p(x)的形式很复杂，或者 p(x) 是个高维的分布的时候，样本的生成就可能很困难了。本节中将要重点介绍的 MCMC(Markov Chain Monte Carlo) 和 Gibbs Sampling 算法就是最常用的一种，这两个方法在现代贝叶斯分析中被广泛使用。</p>
+<h2><span id="马氏链及其平稳分布">马氏链及其平稳分布</span></h2><p>马氏链的一个具体的例子。社会学家经常把人按其经济状况分成 3 类：下层 (lower-class)、中层 (middle-class)、上层 (upper-class)，我们用 1、2、3 分别代表这三个阶层。社会学家们发现决定一个人的收入阶层的最重要的因素就是其父母的收入阶层。如果一个人的收入属于下层类别，那么他的孩子属于下层收入的概率是 0.65，属于中层收入的概率是 0.28，属于上层收入的概率是 0.07。事实上，从父代到子代，收入阶层的变化的转移概率如下：</p>
+<center> 
+<img style="border-radius: 1em;" src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191015150540.png">
+<br>
+<div style="font-weight:bold; border-bottom: 1px solid #d9d9d9;
+display: inline-block;
+padding: 2px;">马氏链的一个具体的例子</div>
+</center>
+
+<p>使用矩阵的表示方式，转移概率矩阵记为</p>
+<script type="math/tex; mode=display">
+P =
+\begin{bmatrix}
+0.65 & 0.28 & 0.07 \\
+0.15 & 0.67 & 0.18 \\
+0.12 & 0.36 & 0.52 \\
+\end{bmatrix}</script><p>假设当前这一代人处在下层、中层、上层的人的比例是概率分布向量 $π_0=[π_0(1),π_0(2),π_0(3)]$，那么他们的子女的分布比例将是 $π_1=π_0P$, 他们的孙子代的分布比例将是 $π_2=π_1P=π_0P^2, ……$, 第n代子孙的收入分布比例将是$π_n=π_{n−1}P=π_0P^n$。</p>
+<p>假设初始概率分布为π0=[0.21,0.68,0.11]，则我们可以计算前n代人的分布状况如下:<br><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191015151041.png" alt="11"><br>从第 7 代人开始，这个分布就稳定不变了，这个是偶然的吗？ 一个初始概率分布π0=[0.75,0.15,0.1] 试试看，继续计算前n代人的分布状况如下:<br><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191015151210.png" alt="22"><br>到第 9 代人的时候, 分布又收敛了。最为奇特的是，两次给定不同的初始概率分布，最终都收敛到概率分布 π=[0.286,0.489,0.225]，也就是说收敛的行为和初始概率分布 $π_0$ 无关。这说明这个收敛行为主要是由概率转移矩阵$P$决定的。我们计算一下$P^n$:</p>
+<script type="math/tex; mode=display">
+P^{20} = P^{21} = \cdots = P^{100} = \cdots =
+\begin{bmatrix}
+0.286 & 0.489 & 0.225 \\
+0.286 & 0.489 & 0.225 \\
+0.286 & 0.489 & 0.225 \\
+\end{bmatrix}</script><p>马氏链定理： 如果一个非周期马氏链具有转移概率矩阵P, 且它的任何两个状态是连通的，那么$\int\limits_{n→∞}P^n_{ij}$存在且与i无关，记$\int\limits_{n→∞}P^n_{ij}=π(j)$.<br>解的形式为：</p>
+<script type="math/tex; mode=display">
+\displaystyle \lim_{n \rightarrow \infty} P^n =\begin{bmatrix}
+\pi(1) & \pi(2) & \cdots & \pi(j) & \cdots \\
+\pi(1) & \pi(2) & \cdots & \pi(j) & \cdots \\
+\cdots & \cdots & \cdots & \cdots & \cdots \\  
+\pi(1) & \pi(2) & \cdots & \pi(j) & \cdots \\ 
+\cdots & \cdots & \cdots & \cdots & \cdots \\ 
+\end{bmatrix}</script><script type="math/tex; mode=display">
+\pi = [\pi(1), \pi(2), \cdots, \pi(j),\cdots ], \quad \sum_{i=0}^{\infty} \pi_i = 1</script><h2><span id="markov-chain-monte-carlo">Markov Chain Monte Carlo</span></h2><p>对于给定的概率分布p(x), 我们希望能有便捷的方式生成它对应的样本。由于马氏链能收敛到平稳分布， 于是一个很的漂亮想法是：如果我们能构造一个转移矩阵为 $P$ 的马氏链，使得该马氏链的平稳分布恰好是p(x)， 那么我们从任何一个初始状态x0出发沿着马氏链转移, 得到一个转移序列x0,x1,x2,⋯xn,xn+1⋯,， 如果马氏链在第n步已经收敛了，于是我们就得到了π(x)的样本xn,xn+1⋯。MCMC 算法是 Metropolis 算法的一个改进变种，即常用的 Metropolis-Hastings 算法。<br>定理：[细致平稳条件] 如果非周期马氏链的转移矩阵P和分布π(x)满足</p>
+<script type="math/tex; mode=display">
+\pi(i)P_{ij} = \pi(j)P_{ji} \quad\quad \text{for all} \quad i,j</script><p>由于π是方程πP=π的解，所以π是平稳分布。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+& \sum_{i=1}^\infty \pi(i)P_{ij} = \sum_{i=1}^\infty \pi(j)P_{ji}
+= \pi(j) \sum_{i=1}^\infty P_{ji} = \pi(j) \\
+& \Rightarrow \pi P = \pi  \qquad (向量形式)
+\end{aligned}</script><p>假设我们已经有一个转移矩阵为Q马氏链 (q(i,j)表示从状态i转移到状态j的概率，也可以写为q(j|i)或者q(i→j)), 显然，通常情况下:</p>
+<script type="math/tex; mode=display">
+p(i) q(i,j) \neq p(j) q(j,i)</script><p>也就是细致平稳条件不成立，所以p(x)不太可能是这个马氏链的平稳分布。我们可否对马氏链做一个改造，使得细致平稳条件成立呢？譬如，我们引入一个 α(i,j)，我们希望</p>
+<script type="math/tex; mode=display">
+p(i) q(i,j)\alpha(i,j) = p(j) q(j,i)\alpha(j,i)  \quad (*)</script><p>取什么样的 α(i,j) 以上等式能成立呢？最简单的，按照对称性，我们可以取</p>
+<script type="math/tex; mode=display">
+\alpha(i,j)= p(j) q(j,i)， \quad \alpha(j,i) = p(i) q(i,j)</script><p>于是 (*) 式就成立了。所以有</p>
+<script type="math/tex; mode=display">
+p(i) \underbrace{q(i,j)\alpha(i,j)}_{Q'(i,j)}
+= p(j) \underbrace{q(j,i)\alpha(j,i)}_{Q'(j,i)} \quad (**)</script><p>于是我们把原来具有转移矩阵 $Q$ 的一个很普通的马氏链，改造为了具有转移矩阵Q′的马氏链，而 Q′恰好满足细致平稳条件，由此马氏链Q′的平稳分布就是p(x)！<br>在改造 Q 的过程中引入的α(i,j)称为接受率，物理意义可以理解为在原来的马氏链上，从状态 i 以q(i,j) 的概率转跳转到状态j 的时候，我们以α(i,j)的概率接受这个转移，于是得到新的马氏链Q′的转移概率为q(i,j)α(i,j)。<br><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191015153027.png" alt="sw"><br>以上的 MCMC 采样算法已经能很漂亮的工作了，不过它有一个小的问题：马氏链Q在转移的过程中的接受率α(i,j)可能偏小，这样采样过程中马氏链容易原地踏步，拒绝大量的跳转，这使得马氏链遍历所有的状态空间要花费太长的时间，收敛到平稳分布p(x)的速度太慢。有没有办法提升一些接受率呢?<br>假设α(i,j)=0.1,α(j,i)=0.2, 此时满足细致平稳条件，于是</p>
+<script type="math/tex; mode=display">
+p(i)q(i,j)\times 0.1 = p(j)q(j,i) \times 0.2</script><p>上式两边扩大 5 倍，我们改写为</p>
+<script type="math/tex; mode=display">
+p(i)q(i,j) \times 0.5 = p(j)q(j,i) \times 1</script><p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191015153236.png" alt="fe"><br>对于分布 p(x), 我们构造转移矩阵 Q′ 使其满足细致平稳条件</p>
+<script type="math/tex; mode=display">
+p(x) Q'(x\rightarrow y) = p(y) Q'(y\rightarrow x)</script><p>此处x并不要求是一维的，对于高维空间的 p(x)，如果满足细致平稳条件</p>
+<script type="math/tex; mode=display">
+p(\mathbf{x}) Q'(\mathbf{x}\rightarrow \mathbf{y}) = p(\mathbf{y}) Q'(\mathbf{y}\rightarrow \mathbf{x})</script><h2><span id="gibbs-sampling">Gibbs Sampling</span></h2><h3><span id="参考">参考:</span></h3><p><a href="https://blog.csdn.net/pipisorry/article/details/51373090" target="_blank" rel="noopener">https://blog.csdn.net/pipisorry/article/details/51373090</a></p>
 
       
     </div>
@@ -399,8 +448,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/14/用pytorch搭建全连接神经网络例子/" rel="next" title="用pytorch搭建全连接神经网络例子">
-                <i class="fa fa-chevron-left"></i> 用pytorch搭建全连接神经网络例子
+              <a href="/2019/10/15/基于吉布斯采样的LDA主题模型/" rel="next" title="基于吉布斯采样的LDA主题模型">
+                <i class="fa fa-chevron-left"></i> 基于吉布斯采样的LDA主题模型
               </a>
             
           </div>
@@ -408,10 +457,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/15/马尔科夫链到吉布斯采样/" rel="prev" title="马尔科夫链到吉布斯采样">
-                马尔科夫链到吉布斯采样 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -543,7 +588,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">特征脸</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">弹性图匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">基于视频图像的识别算法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">采样算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">马氏链及其平稳分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">Markov Chain Monte Carlo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">Gibbs Sampling</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">4.1.</span> <span class="nav-text">参考:</span></a></li></ol></li></ol></div>
             
 
           </div>
