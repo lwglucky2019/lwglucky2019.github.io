@@ -91,7 +91,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191015151210.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191015153027.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191015153236.png">
-<meta property="og:updated_time" content="2019-10-15T10:30:07.495Z">
+<meta property="og:updated_time" content="2019-10-15T15:10:59.086Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MCMC和Gibbs采样">
 <meta name="twitter:description" content="采样算法统计模拟中有一个重要的问题就是给定一个概率分布p(x)，我们如何在计算机中生成它的样本。常见的概率分布，无论是连续的还是离散的分布，都可以基于Uniform(0,1) 的样本生成。例如正态分布可以通过著名的 Box-Muller 变换得到：  \begin{aligned} Z_0 &amp; = \sqrt{-2\ln U_1} cos(2\pi U_2) \\ Z_1 &amp; = \sqrt{-2">
@@ -415,7 +415,7 @@ p(i) q(i,j)\alpha(i,j) = p(j) q(j,i)\alpha(j,i)  \quad (*)</script><p>取什么�
 \alpha(i,j)= p(j) q(j,i)， \quad \alpha(j,i) = p(i) q(i,j)</script><p>于是 (*) 式就成立了。所以有</p>
 <script type="math/tex; mode=display">
 p(i) \underbrace{q(i,j)\alpha(i,j)}_{Q'(i,j)}
-= p(j) \underbrace{q(j,i)\alpha(j,i)}_{Q'(j,i)} \quad (**)</script><p>于是我们把原来具有转移矩阵 $Q$ 的一个很普通的马氏链，改造为了具有转移矩阵Q′的马氏链，而 Q′恰好满足细致平稳条件，由此马氏链Q′的平稳分布就是p(x)！<br>在改造 Q 的过程中引入的α(i,j)称为接受率，物理意义可以理解为在原来的马氏链上，从状态 i 以q(i,j) 的概率转跳转到状态j 的时候，我们以α(i,j)的概率接受这个转移，于是得到新的马氏链Q′的转移概率为q(i,j)α(i,j)。<br><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191015153027.png" alt="sw"><br>以上的 MCMC 采样算法已经能很漂亮的工作了，不过它有一个小的问题：马氏链Q在转移的过程中的接受率α(i,j)可能偏小，这样采样过程中马氏链容易原地踏步，拒绝大量的跳转，这使得马氏链遍历所有的状态空间要花费太长的时间，收敛到平稳分布p(x)的速度太慢。有没有办法提升一些接受率呢?<br>假设α(i,j)=0.1,α(j,i)=0.2, 此时满足细致平稳条件，于是</p>
+= p(j) \underbrace{q(j,i)\alpha(j,i)}_{Q'(j,i)} \quad (**)</script><p>于是我们把原来具有转移矩阵 $Q$ 的一个很普通的马氏链，改造为了具有转移矩阵Q′的马氏链，而 Q′恰好满足细致平稳条件，由此马氏链Q′的平稳分布就是p(x)！<br>在改造 Q 的过程中引入的α(i,j)称为接受率，物理意义可以理解为在原来的马氏链上，从状态 i 以q(i,j) 的概率转跳转到状态j 的时候，我们以α(i,j)的概率接受这个转移，于是得到新的马氏链Q′的转移概率为q(i,j)α(i,j)。<br><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191015153027.png" alt="sw"><br>以上的 MCMC 采样算法已经能工作了，不过它有一个小的问题：马氏链Q在转移的过程中的接受率α(i,j)可能偏小，这样采样过程中马氏链容易原地踏步，拒绝大量的跳转，这使得马氏链遍历所有的状态空间要花费太长的时间，收敛到平稳分布p(x)的速度太慢。有没有办法提升一些接受率呢?<br>假设α(i,j)=0.1,α(j,i)=0.2, 此时满足细致平稳条件，于是</p>
 <script type="math/tex; mode=display">
 p(i)q(i,j)\times 0.1 = p(j)q(j,i) \times 0.2</script><p>上式两边扩大 5 倍，我们改写为</p>
 <script type="math/tex; mode=display">
@@ -423,7 +423,8 @@ p(i)q(i,j) \times 0.5 = p(j)q(j,i) \times 1</script><p><img src="https://raw.git
 <script type="math/tex; mode=display">
 p(x) Q'(x\rightarrow y) = p(y) Q'(y\rightarrow x)</script><p>此处x并不要求是一维的，对于高维空间的 p(x)，如果满足细致平稳条件</p>
 <script type="math/tex; mode=display">
-p(\mathbf{x}) Q'(\mathbf{x}\rightarrow \mathbf{y}) = p(\mathbf{y}) Q'(\mathbf{y}\rightarrow \mathbf{x})</script><h2><span id="gibbs-sampling">Gibbs Sampling</span></h2><h3><span id="参考">参考:</span></h3><p><a href="https://blog.csdn.net/pipisorry/article/details/51373090" target="_blank" rel="noopener">https://blog.csdn.net/pipisorry/article/details/51373090</a></p>
+p(\mathbf{x}) Q'(\mathbf{x}\rightarrow \mathbf{y}) = p(\mathbf{y}) Q'(\mathbf{y}\rightarrow \mathbf{x})</script><h2><span id="gibbs-sampling">Gibbs Sampling</span></h2><p><a href="https://blog.csdn.net/pipisorry/article/details/51373090" target="_blank" rel="noopener">https://blog.csdn.net/pipisorry/article/details/51373090</a><br><a href="http://fourier.eng.hmc.edu/e161/lectures/gaussianprocess/node7.html" target="_blank" rel="noopener">http://fourier.eng.hmc.edu/e161/lectures/gaussianprocess/node7.html</a></p>
+<h3><span id="参考">参考:</span></h3><p><a href="https://blog.csdn.net/pipisorry/article/details/51373090" target="_blank" rel="noopener">https://blog.csdn.net/pipisorry/article/details/51373090</a><br><a href="https://www.cnblogs.com/ironstark/p/5229085.html" target="_blank" rel="noopener">https://www.cnblogs.com/ironstark/p/5229085.html</a></p>
 
       
     </div>
@@ -457,6 +458,10 @@ p(\mathbf{x}) Q'(\mathbf{x}\rightarrow \mathbf{y}) = p(\mathbf{y}) Q'(\mathbf{y}
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/16/马尔科夫随机场在图像处理中的应用/" rel="prev" title="马尔科夫随机场在图像处理中的应用">
+                马尔科夫随机场在图像处理中的应用 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -533,7 +538,7 @@ p(\mathbf{x}) Q'(\mathbf{x}\rightarrow \mathbf{y}) = p(\mathbf{y}) Q'(\mathbf{y}
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
