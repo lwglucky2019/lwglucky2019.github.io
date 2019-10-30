@@ -79,19 +79,17 @@
 
 
 
-<meta name="description" content="安装必要的库更新源sudo apt-get updatesudo apt-get upgradesudo rpi-updatesudo reboot 安装库sudo apt-get -y install build-essential git cmake pkg-configsudo apt-get -y install libjpeg8-devsudo apt-get -y install li">
+<meta name="description" content="参考https://blog.csdn.net/R18830287035/article/details/89248791">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OpenCV在树莓派上的安装">
-<meta property="og:url" content="http://yoursite.com/2019/10/13/OpenCV在树莓派上的安装/index.html">
+<meta property="og:title" content="强化学习入门">
+<meta property="og:url" content="http://yoursite.com/2019/10/25/强化学习入门/index.html">
 <meta property="og:site_name" content="WeiGuangLi">
-<meta property="og:description" content="安装必要的库更新源sudo apt-get updatesudo apt-get upgradesudo rpi-updatesudo reboot 安装库sudo apt-get -y install build-essential git cmake pkg-configsudo apt-get -y install libjpeg8-devsudo apt-get -y install li">
+<meta property="og:description" content="参考https://blog.csdn.net/R18830287035/article/details/89248791">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191013165556.png">
-<meta property="og:updated_time" content="2019-10-13T09:00:05.137Z">
+<meta property="og:updated_time" content="2019-10-24T16:13:59.904Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OpenCV在树莓派上的安装">
-<meta name="twitter:description" content="安装必要的库更新源sudo apt-get updatesudo apt-get upgradesudo rpi-updatesudo reboot 安装库sudo apt-get -y install build-essential git cmake pkg-configsudo apt-get -y install libjpeg8-devsudo apt-get -y install li">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191013165556.png">
+<meta name="twitter:title" content="强化学习入门">
+<meta name="twitter:description" content="参考https://blog.csdn.net/R18830287035/article/details/89248791">
 
 
 
@@ -121,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/10/13/OpenCV在树莓派上的安装/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/25/强化学习入门/">
 
 
 
 
 
-  <title>OpenCV在树莓派上的安装 | WeiGuangLi</title>
+  <title>强化学习入门 | WeiGuangLi</title>
   
 
 
@@ -266,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/13/OpenCV在树莓派上的安装/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/25/强化学习入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lwglucky">
@@ -283,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">OpenCV在树莓派上的安装</h1>
+          <h1 class="post-title" itemprop="name headline">强化学习入门</h1>
         
 
         <div class="post-meta">
@@ -295,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-13T09:38:33+08:00">
-                2019-10-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-25T00:12:31+08:00">
+                2019-10-25
               </time>
             
 
@@ -318,8 +316,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/树莓派/" itemprop="url" rel="index">
-                    <span itemprop="name">树莓派</span>
+                  <a href="/categories/智能算法/" itemprop="url" rel="index">
+                    <span itemprop="name">智能算法</span>
                   </a>
                 </span>
 
@@ -355,12 +353,7 @@
       
 
       
-        <h2><span id="安装必要的库">安装必要的库</span></h2><h4><span id="更新源">更新源</span></h4><p>sudo apt-get update<br>sudo apt-get upgrade<br>sudo rpi-update<br>sudo reboot</p>
-<h4><span id="安装库">安装库</span></h4><p>sudo apt-get -y install build-essential git cmake pkg-config<br>sudo apt-get -y install libjpeg8-dev<br>sudo apt-get -y install libtiff5-dev<br>sudo apt-get -y install libjasper-dev<br>sudo apt-get -y install libpng12-dev<br>sudo apt-get -y install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev<br>sudo apt-get -y install libgtk2.0-dev<br>sudo apt-get -y install libsdl2-dev<br>sudo apt-get -y install libatlas-base-dev gfortran<br>sudo apt-get -y install libxvidcore-dev libx264-dev</p>
-<h2><span id="获取-opencv代码">获取  opencv代码</span></h2><p>git clone <a href="https://github.com/opencv/opencv.git" target="_blank" rel="noopener">https://github.com/opencv/opencv.git</a><br>git clone <a href="https://github.com/opencv/opencv_contrib.git" target="_blank" rel="noopener">https://github.com/opencv/opencv_contrib.git</a><br>如果总是下载到一半就中断，加入 —depth=1参数,比如：<br>git clone <a href="https://github.com/opencv/opencv.git" target="_blank" rel="noopener">https://github.com/opencv/opencv.git</a> —depth=1</p>
-<h2><span id="将-opencv_contrib-目录拷贝到-opencv目录">将 opencv_contrib 目录拷贝到 opencv目录</span></h2><p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191013165556.png" alt="aa"><br>创建 build目录，并 cd build</p>
-<h2><span id="编译">编译</span></h2><p>cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local ..<br>没有错误就可以编译，如果有错误，就一一修正。有可能需要安装 ffmpeg支持 mpeg 视频流。 ffmpeg可以github上下载安装。<br>然后<br> make -j4<br> sudo make install<br> sudo ldconfig </p>
-<h2><span id="测试">测试</span></h2><p> python<br> import cv2</p>
+        <h4><span id="参考">参考</span></h4><p><a href="https://blog.csdn.net/R18830287035/article/details/89248791" target="_blank" rel="noopener">https://blog.csdn.net/R18830287035/article/details/89248791</a></p>
 
       
     </div>
@@ -385,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/11/泛函与变分初步/" rel="next" title="泛函与变分初步">
-                <i class="fa fa-chevron-left"></i> 泛函与变分初步
+              <a href="/2019/10/22/泛函急速入门例子/" rel="next" title="泛函急速入门例子">
+                <i class="fa fa-chevron-left"></i> 泛函急速入门例子
               </a>
             
           </div>
@@ -395,8 +388,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/10/14/人脸识别的例子入门/" rel="prev" title="人脸识别的例子入门">
-                人脸识别的例子入门 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/10/31/双目立体视觉立体校正/" rel="prev" title="双目立体视觉立体校正">
+                双目立体视觉立体校正 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -529,7 +522,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">安装必要的库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.1.</span> <span class="nav-text">更新源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.2.</span> <span class="nav-text">安装库</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">获取  opencv代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">将 opencv_contrib 目录拷贝到 opencv目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">5.</span> <span class="nav-text">测试</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
