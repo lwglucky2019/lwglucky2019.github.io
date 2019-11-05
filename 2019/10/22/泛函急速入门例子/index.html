@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="泛函和变分法给定两点$ A(x0​,y0​)和B(x1,y1) $ ，求AB两点之间的最短距离。两点之间直线最短，这还用球吗？可是为什么是直线最短呢，而不是其它曲线？ 设链接AB两点的曲线为f(x),则AB之间的距离可以表示为在区间[x0,x1] 上求$ΔS=\sqrt{(Δx)^2+(Δy)^2}$​线段的累积长度：  S=∫_{x_0}^{​x_1}\sqrt{​1+f′(x)^2}​dx在这">
+<meta name="description" content="&amp;#x6CDB;&amp;#x51FD;&amp;#x548C;&amp;#x53D8;&amp;#x5206;&amp;#x6CD5;&amp;#x7ED9;&amp;#x5B9A;&amp;#x4E24;&amp;#x70B9;$ A(x0&amp;#x200B;,y0&amp;#x200B;)&amp;#x548C;B(x1,y1) $ &amp;#xFF0C;&amp;#x6C42;AB&amp;#x4E24;&amp;#x70B9;&amp;#x4E4B;&amp;#x95F4;&amp;#x7684;&amp;#x6700;&amp;#x77ED;&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="泛函急速入门例子">
 <meta property="og:url" content="http://yoursite.com/2019/10/22/泛函急速入门例子/index.html">
 <meta property="og:site_name" content="WeiGuangLi">
-<meta property="og:description" content="泛函和变分法给定两点$ A(x0​,y0​)和B(x1,y1) $ ，求AB两点之间的最短距离。两点之间直线最短，这还用球吗？可是为什么是直线最短呢，而不是其它曲线？ 设链接AB两点的曲线为f(x),则AB之间的距离可以表示为在区间[x0,x1] 上求$ΔS=\sqrt{(Δx)^2+(Δy)^2}$​线段的累积长度：  S=∫_{x_0}^{​x_1}\sqrt{​1+f′(x)^2}​dx在这">
+<meta property="og:description" content="&amp;#x6CDB;&amp;#x51FD;&amp;#x548C;&amp;#x53D8;&amp;#x5206;&amp;#x6CD5;&amp;#x7ED9;&amp;#x5B9A;&amp;#x4E24;&amp;#x70B9;$ A(x0&amp;#x200B;,y0&amp;#x200B;)&amp;#x548C;B(x1,y1) $ &amp;#xFF0C;&amp;#x6C42;AB&amp;#x4E24;&amp;#x70B9;&amp;#x4E4B;&amp;#x95F4;&amp;#x7684;&amp;#x6700;&amp;#x77ED;&amp;">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-10-22T10:21:19.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="泛函急速入门例子">
-<meta name="twitter:description" content="泛函和变分法给定两点$ A(x0​,y0​)和B(x1,y1) $ ，求AB两点之间的最短距离。两点之间直线最短，这还用球吗？可是为什么是直线最短呢，而不是其它曲线？ 设链接AB两点的曲线为f(x),则AB之间的距离可以表示为在区间[x0,x1] 上求$ΔS=\sqrt{(Δx)^2+(Δy)^2}$​线段的累积长度：  S=∫_{x_0}^{​x_1}\sqrt{​1+f′(x)^2}​dx在这">
+<meta name="twitter:description" content="&amp;#x6CDB;&amp;#x51FD;&amp;#x548C;&amp;#x53D8;&amp;#x5206;&amp;#x6CD5;&amp;#x7ED9;&amp;#x5B9A;&amp;#x4E24;&amp;#x70B9;$ A(x0&amp;#x200B;,y0&amp;#x200B;)&amp;#x548C;B(x1,y1) $ &amp;#xFF0C;&amp;#x6C42;AB&amp;#x4E24;&amp;#x70B9;&amp;#x4E4B;&amp;#x95F4;&amp;#x7684;&amp;#x6700;&amp;#x77ED;&amp;">
 
 
 
@@ -353,26 +353,26 @@
       
 
       
-        <h3><span id="泛函和变分法">泛函和变分法</span></h3><p>给定两点$ A(x0​,y0​)和B(x1,y1) $ ，求AB两点之间的最短距离。两点之间直线最短，这还用球吗？可是为什么是直线最短呢，而不是其它曲线？</p>
-<p>设链接AB两点的曲线为f(x),则AB之间的距离可以表示为在区间[x0,x1] 上求$ΔS=\sqrt{(Δx)^2+(Δy)^2}$​线段的累积长度：</p>
+        <h3><span id="x6cdbx51fdx548cx53d8x5206x6cd5">&#x6CDB;&#x51FD;&#x548C;&#x53D8;&#x5206;&#x6CD5;</span></h3><p>&#x7ED9;&#x5B9A;&#x4E24;&#x70B9;$ A(x0&#x200B;,y0&#x200B;)&#x548C;B(x1,y1) $ &#xFF0C;&#x6C42;AB&#x4E24;&#x70B9;&#x4E4B;&#x95F4;&#x7684;&#x6700;&#x77ED;&#x8DDD;&#x79BB;&#x3002;&#x4E24;&#x70B9;&#x4E4B;&#x95F4;&#x76F4;&#x7EBF;&#x6700;&#x77ED;&#xFF0C;&#x8FD9;&#x8FD8;&#x7528;&#x7403;&#x5417;&#xFF1F;&#x53EF;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x662F;&#x76F4;&#x7EBF;&#x6700;&#x77ED;&#x5462;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5176;&#x5B83;&#x66F2;&#x7EBF;&#xFF1F;</p>
+<p>&#x8BBE;&#x94FE;&#x63A5;AB&#x4E24;&#x70B9;&#x7684;&#x66F2;&#x7EBF;&#x4E3A;f(x),&#x5219;AB&#x4E4B;&#x95F4;&#x7684;&#x8DDD;&#x79BB;&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x4E3A;&#x5728;&#x533A;&#x95F4;[x0,x1] &#x4E0A;&#x6C42;$&#x394;S=\sqrt{(&#x394;x)^2+(&#x394;y)^2}$&#x200B;&#x7EBF;&#x6BB5;&#x7684;&#x7D2F;&#x79EF;&#x957F;&#x5EA6;&#xFF1A;</p>
 <script type="math/tex; mode=display">
-S=∫_{x_0}^{​x_1}\sqrt{​1+f′(x)^2}​dx</script><p>在这里该函数的变量是f，即函数的变量为函数，我们需要求解出合适的f使得S最小。我们把这样的函数S称为泛函数。</p>
-<p>定义：泛函是以函数为变量的函数。</p>
-<h3><span id="变分的定义">变分的定义</span></h3><p>下面给出变分的定义：对于任意定值x∈[x0,x1]，可取函数y(x)与另一可取函数y0(x)之差y(x)−y0(x)称为函数y(x)y(x)在y0(x)处的变分或函数的变分，记做δy，这时有δy=y(x)−y0(x)=ϵη(x)，ϵ是一个很小的数，η(x)是x的任意参数.<br>对于泛函J[y(x)]的增量$ΔJ=J[y(x)+δy]−J[y(x)]=δJ+o(δy)$<br>泛函的增量ΔJ与变分δJ之差是一个比一阶距离更高阶的无穷小，泛函的变分是泛函增量的线性主要部分。</p>
-<p>变分的定义是不是跟微分很像（微分的定义Δy=AΔx+o(Δx)=dy+o(Δ(x)，A是该点的导数）。类比一下，我们在高等数学中学习到的函数极值的必要条件是函数导数等于0，而泛函极值的必要条件也是泛函的变分等于0。</p>
-<p>所以有如下定理：若泛函J[y(x)]在y=y(x)上达到极值，则它在y=y(x)上的变分δJ等于零。这就是变分原理。</p>
-<h3><span id="拉格朗日函数">拉格朗日函数</span></h3><p>设F(x,y(x),y′(x))是三个独立变量x，y(x)，y′(x)在区间[x0,x1]上的已知函数，且二阶连续可微，其中y(x)和y′(x)是x的未知函数，则泛函:</p>
+S=∫_{x_0}^{​x_1}\sqrt{​1+f′(x)^2}​dx</script><p>&#x5728;&#x8FD9;&#x91CC;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x53D8;&#x91CF;&#x662F;f&#xFF0C;&#x5373;&#x51FD;&#x6570;&#x7684;&#x53D8;&#x91CF;&#x4E3A;&#x51FD;&#x6570;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6C42;&#x89E3;&#x51FA;&#x5408;&#x9002;&#x7684;f&#x4F7F;&#x5F97;S&#x6700;&#x5C0F;&#x3002;&#x6211;&#x4EEC;&#x628A;&#x8FD9;&#x6837;&#x7684;&#x51FD;&#x6570;S&#x79F0;&#x4E3A;&#x6CDB;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x5B9A;&#x4E49;&#xFF1A;&#x6CDB;&#x51FD;&#x662F;&#x4EE5;&#x51FD;&#x6570;&#x4E3A;&#x53D8;&#x91CF;&#x7684;&#x51FD;&#x6570;&#x3002;</p>
+<h3><span id="x53d8x5206x7684x5b9ax4e49">&#x53D8;&#x5206;&#x7684;&#x5B9A;&#x4E49;</span></h3><p>&#x4E0B;&#x9762;&#x7ED9;&#x51FA;&#x53D8;&#x5206;&#x7684;&#x5B9A;&#x4E49;&#xFF1A;&#x5BF9;&#x4E8E;&#x4EFB;&#x610F;&#x5B9A;&#x503C;x&#x2208;[x0,x1]&#xFF0C;&#x53EF;&#x53D6;&#x51FD;&#x6570;y(x)&#x4E0E;&#x53E6;&#x4E00;&#x53EF;&#x53D6;&#x51FD;&#x6570;y0(x)&#x4E4B;&#x5DEE;y(x)&#x2212;y0(x)&#x79F0;&#x4E3A;&#x51FD;&#x6570;y(x)y(x)&#x5728;y0(x)&#x5904;&#x7684;&#x53D8;&#x5206;&#x6216;&#x51FD;&#x6570;&#x7684;&#x53D8;&#x5206;&#xFF0C;&#x8BB0;&#x505A;&#x3B4;y&#xFF0C;&#x8FD9;&#x65F6;&#x6709;&#x3B4;y=y(x)&#x2212;y0(x)=&#x3F5;&#x3B7;(x)&#xFF0C;&#x3F5;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x5C0F;&#x7684;&#x6570;&#xFF0C;&#x3B7;(x)&#x662F;x&#x7684;&#x4EFB;&#x610F;&#x53C2;&#x6570;.<br>&#x5BF9;&#x4E8E;&#x6CDB;&#x51FD;J[y(x)]&#x7684;&#x589E;&#x91CF;$&#x394;J=J[y(x)+&#x3B4;y]&#x2212;J[y(x)]=&#x3B4;J+o(&#x3B4;y)$<br>&#x6CDB;&#x51FD;&#x7684;&#x589E;&#x91CF;&#x394;J&#x4E0E;&#x53D8;&#x5206;&#x3B4;J&#x4E4B;&#x5DEE;&#x662F;&#x4E00;&#x4E2A;&#x6BD4;&#x4E00;&#x9636;&#x8DDD;&#x79BB;&#x66F4;&#x9AD8;&#x9636;&#x7684;&#x65E0;&#x7A77;&#x5C0F;&#xFF0C;&#x6CDB;&#x51FD;&#x7684;&#x53D8;&#x5206;&#x662F;&#x6CDB;&#x51FD;&#x589E;&#x91CF;&#x7684;&#x7EBF;&#x6027;&#x4E3B;&#x8981;&#x90E8;&#x5206;&#x3002;</p>
+<p>&#x53D8;&#x5206;&#x7684;&#x5B9A;&#x4E49;&#x662F;&#x4E0D;&#x662F;&#x8DDF;&#x5FAE;&#x5206;&#x5F88;&#x50CF;&#xFF08;&#x5FAE;&#x5206;&#x7684;&#x5B9A;&#x4E49;&#x394;y=A&#x394;x+o(&#x394;x)=dy+o(&#x394;(x)&#xFF0C;A&#x662F;&#x8BE5;&#x70B9;&#x7684;&#x5BFC;&#x6570;&#xFF09;&#x3002;&#x7C7B;&#x6BD4;&#x4E00;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x9AD8;&#x7B49;&#x6570;&#x5B66;&#x4E2D;&#x5B66;&#x4E60;&#x5230;&#x7684;&#x51FD;&#x6570;&#x6781;&#x503C;&#x7684;&#x5FC5;&#x8981;&#x6761;&#x4EF6;&#x662F;&#x51FD;&#x6570;&#x5BFC;&#x6570;&#x7B49;&#x4E8E;0&#xFF0C;&#x800C;&#x6CDB;&#x51FD;&#x6781;&#x503C;&#x7684;&#x5FC5;&#x8981;&#x6761;&#x4EF6;&#x4E5F;&#x662F;&#x6CDB;&#x51FD;&#x7684;&#x53D8;&#x5206;&#x7B49;&#x4E8E;0&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x6709;&#x5982;&#x4E0B;&#x5B9A;&#x7406;&#xFF1A;&#x82E5;&#x6CDB;&#x51FD;J[y(x)]&#x5728;y=y(x)&#x4E0A;&#x8FBE;&#x5230;&#x6781;&#x503C;&#xFF0C;&#x5219;&#x5B83;&#x5728;y=y(x)&#x4E0A;&#x7684;&#x53D8;&#x5206;&#x3B4;J&#x7B49;&#x4E8E;&#x96F6;&#x3002;&#x8FD9;&#x5C31;&#x662F;&#x53D8;&#x5206;&#x539F;&#x7406;&#x3002;</p>
+<h3><span id="x62c9x683cx6717x65e5x51fdx6570">&#x62C9;&#x683C;&#x6717;&#x65E5;&#x51FD;&#x6570;</span></h3><p>&#x8BBE;F(x,y(x),y&#x2032;(x))&#x662F;&#x4E09;&#x4E2A;&#x72EC;&#x7ACB;&#x53D8;&#x91CF;x&#xFF0C;y(x)&#xFF0C;y&#x2032;(x)&#x5728;&#x533A;&#x95F4;[x0,x1]&#x4E0A;&#x7684;&#x5DF2;&#x77E5;&#x51FD;&#x6570;&#xFF0C;&#x4E14;&#x4E8C;&#x9636;&#x8FDE;&#x7EED;&#x53EF;&#x5FAE;&#xFF0C;&#x5176;&#x4E2D;y(x)&#x548C;y&#x2032;(x)&#x662F;x&#x7684;&#x672A;&#x77E5;&#x51FD;&#x6570;&#xFF0C;&#x5219;&#x6CDB;&#x51FD;:</p>
 <script type="math/tex; mode=display">
-J[y(x)] = \int _{x_0} ^{x_1} F(x,y(x),y'(x))dx</script><p>称为最简单的积分形泛函，简称最简泛函，被积函数FF称为拉格朗日函数。<br>对于拉格朗日函数，其泛函的变分为</p>
+J[y(x)] = \int _{x_0} ^{x_1} F(x,y(x),y'(x))dx</script><p>&#x79F0;&#x4E3A;&#x6700;&#x7B80;&#x5355;&#x7684;&#x79EF;&#x5206;&#x5F62;&#x6CDB;&#x51FD;&#xFF0C;&#x7B80;&#x79F0;&#x6700;&#x7B80;&#x6CDB;&#x51FD;&#xFF0C;&#x88AB;&#x79EF;&#x51FD;&#x6570;FF&#x79F0;&#x4E3A;&#x62C9;&#x683C;&#x6717;&#x65E5;&#x51FD;&#x6570;&#x3002;<br>&#x5BF9;&#x4E8E;&#x62C9;&#x683C;&#x6717;&#x65E5;&#x51FD;&#x6570;&#xFF0C;&#x5176;&#x6CDB;&#x51FD;&#x7684;&#x53D8;&#x5206;&#x4E3A;</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
  δJ & =\int _{x_0} ^{x_1}(F_yδ_y+F_{y'}δy')dx   \\ & = \int _{x_0} ^{x_1}F_yδ_ydx + \left( F_{y'}δ_y|^{x_1} _{x_0} -\int _{x_0}^{x_1}(δ_y\frac{d}{dx}F_{y'}dx) \right)  \\
  & = \int _{x_0} ^{x_1} \left( F_y-\frac{d}{dx}F_{y'} \right)δ_ydx
-\end{aligned}</script><h3><span id="欧拉方程">欧拉方程</span></h3><p>利用变分原理，使最简泛函$J[y(x)]=∫^{x_1}_{x_0}F(x,y(x),y′(x))dx$取得极值且满足固定边界条件$y(x_0)=y_0$，$y(x_1)=y_1$的极值曲线$y=y(x)$应满足必要条件:</p>
+\end{aligned}</script><h3><span id="x6b27x62c9x65b9x7a0b">&#x6B27;&#x62C9;&#x65B9;&#x7A0B;</span></h3><p>&#x5229;&#x7528;&#x53D8;&#x5206;&#x539F;&#x7406;&#xFF0C;&#x4F7F;&#x6700;&#x7B80;&#x6CDB;&#x51FD;$J[y(x)]=&#x222B;^{x_1}_{x_0}F(x,y(x),y&#x2032;(x))dx$&#x53D6;&#x5F97;&#x6781;&#x503C;&#x4E14;&#x6EE1;&#x8DB3;&#x56FA;&#x5B9A;&#x8FB9;&#x754C;&#x6761;&#x4EF6;$y(x_0)=y_0$&#xFF0C;$y(x_1)=y_1$&#x7684;&#x6781;&#x503C;&#x66F2;&#x7EBF;$y=y(x)$&#x5E94;&#x6EE1;&#x8DB3;&#x5FC5;&#x8981;&#x6761;&#x4EF6;:</p>
 <script type="math/tex; mode=display">
-F_y-\frac{d}{dx}F_{y'}=0</script><h3><span id="案例分析两点之间直线最短">案例分析–两点之间直线最短</span></h3><p>利用欧拉方程来证明博文刚开始提出的两点之间直线最短的问题。<br>这里的$F=\sqrt{1+f′(x)2} $​，求得$F_y=0$，$ F_{y′}=\frac{y′}{\sqrt{1+y′^2}}​$​，再求得$\frac{d}{dx}F_{y′}=y’’(1+y′2)^{−\frac{3}{2}} $<br>根据欧拉方程有$ −y’’(1+y′^2)^{−\frac{3}{2}}=0$，则</p>
+F_y-\frac{d}{dx}F_{y'}=0</script><h3><span id="x6848x4f8bx5206x6790x2013x4e24x70b9x4e4bx95f4x76f4x7ebfx6700x77ed">&#x6848;&#x4F8B;&#x5206;&#x6790;&#x2013;&#x4E24;&#x70B9;&#x4E4B;&#x95F4;&#x76F4;&#x7EBF;&#x6700;&#x77ED;</span></h3><p>&#x5229;&#x7528;&#x6B27;&#x62C9;&#x65B9;&#x7A0B;&#x6765;&#x8BC1;&#x660E;&#x535A;&#x6587;&#x521A;&#x5F00;&#x59CB;&#x63D0;&#x51FA;&#x7684;&#x4E24;&#x70B9;&#x4E4B;&#x95F4;&#x76F4;&#x7EBF;&#x6700;&#x77ED;&#x7684;&#x95EE;&#x9898;&#x3002;<br>&#x8FD9;&#x91CC;&#x7684;$F=\sqrt{1+f&#x2032;(x)2} $&#x200B;&#xFF0C;&#x6C42;&#x5F97;$F_y=0$&#xFF0C;$ F_{y&#x2032;}=\frac{y&#x2032;}{\sqrt{1+y&#x2032;^2}}&#x200B;$&#x200B;&#xFF0C;&#x518D;&#x6C42;&#x5F97;$\frac{d}{dx}F_{y&#x2032;}=y&#x2019;&#x2019;(1+y&#x2032;2)^{&#x2212;\frac{3}{2}} $<br>&#x6839;&#x636E;&#x6B27;&#x62C9;&#x65B9;&#x7A0B;&#x6709;$ &#x2212;y&#x2019;&#x2019;(1+y&#x2032;^2)^{&#x2212;\frac{3}{2}}=0$&#xFF0C;&#x5219;</p>
 <script type="math/tex; mode=display">
-y''=0⇒y′=C⇒y=C1x+C2</script><p>此时，就得到了这条曲线确实就是连接两点的直线。</p>
+y''=0⇒y′=C⇒y=C1x+C2</script><p>&#x6B64;&#x65F6;&#xFF0C;&#x5C31;&#x5F97;&#x5230;&#x4E86;&#x8FD9;&#x6761;&#x66F2;&#x7EBF;&#x786E;&#x5B9E;&#x5C31;&#x662F;&#x8FDE;&#x63A5;&#x4E24;&#x70B9;&#x7684;&#x76F4;&#x7EBF;&#x3002;</p>
 
       
     </div>

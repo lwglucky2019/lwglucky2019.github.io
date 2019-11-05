@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="树莓派烧写完TF卡镜像后无法自动连接WIFI，还需要显示器进行配置好网络后才能SSH连接进行配置，非常不方便。按如下配置即可自动配置好WIFI连接。  烧写完TF卡后，在根目录下建立空白 ssh 文件（文件内容为空）,打开树莓派SSH服务。  在根目录下建立文件： wpa_supplicant.conf 。内容如下:  12345678country=CNctrl_interface=DIR=">
+<meta name="description" content="&amp;#x6811;&amp;#x8393;&amp;#x6D3E;&amp;#x70E7;&amp;#x5199;&amp;#x5B8C;TF&amp;#x5361;&amp;#x955C;&amp;#x50CF;&amp;#x540E;&amp;#x65E0;&amp;#x6CD5;&amp;#x81EA;&amp;#x52A8;&amp;#x8FDE;&amp;#x63A5;WIFI&amp;#xFF0C;&amp;#x8FD8;&amp;#x9700;&amp;#x8981;&amp;#x663E;&amp;#x793A;&amp;#x5668;&amp;#x8FDB;">
 <meta name="keywords" content="树莓派">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树莓派免显示器配置WIFI">
 <meta property="og:url" content="http://yoursite.com/2019/09/27/树莓派免显示器配置WIFI/index.html">
 <meta property="og:site_name" content="WeiGuangLi">
-<meta property="og:description" content="树莓派烧写完TF卡镜像后无法自动连接WIFI，还需要显示器进行配置好网络后才能SSH连接进行配置，非常不方便。按如下配置即可自动配置好WIFI连接。  烧写完TF卡后，在根目录下建立空白 ssh 文件（文件内容为空）,打开树莓派SSH服务。  在根目录下建立文件： wpa_supplicant.conf 。内容如下:  12345678country=CNctrl_interface=DIR=">
+<meta property="og:description" content="&amp;#x6811;&amp;#x8393;&amp;#x6D3E;&amp;#x70E7;&amp;#x5199;&amp;#x5B8C;TF&amp;#x5361;&amp;#x955C;&amp;#x50CF;&amp;#x540E;&amp;#x65E0;&amp;#x6CD5;&amp;#x81EA;&amp;#x52A8;&amp;#x8FDE;&amp;#x63A5;WIFI&amp;#xFF0C;&amp;#x8FD8;&amp;#x9700;&amp;#x8981;&amp;#x663E;&amp;#x793A;&amp;#x5668;&amp;#x8FDB;">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190927073447.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190927073609.png">
@@ -94,7 +94,7 @@
 <meta property="og:updated_time" content="2019-09-28T03:37:01.645Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树莓派免显示器配置WIFI">
-<meta name="twitter:description" content="树莓派烧写完TF卡镜像后无法自动连接WIFI，还需要显示器进行配置好网络后才能SSH连接进行配置，非常不方便。按如下配置即可自动配置好WIFI连接。  烧写完TF卡后，在根目录下建立空白 ssh 文件（文件内容为空）,打开树莓派SSH服务。  在根目录下建立文件： wpa_supplicant.conf 。内容如下:  12345678country=CNctrl_interface=DIR=">
+<meta name="twitter:description" content="&amp;#x6811;&amp;#x8393;&amp;#x6D3E;&amp;#x70E7;&amp;#x5199;&amp;#x5B8C;TF&amp;#x5361;&amp;#x955C;&amp;#x50CF;&amp;#x540E;&amp;#x65E0;&amp;#x6CD5;&amp;#x81EA;&amp;#x52A8;&amp;#x8FDE;&amp;#x63A5;WIFI&amp;#xFF0C;&amp;#x8FD8;&amp;#x9700;&amp;#x8981;&amp;#x663E;&amp;#x793A;&amp;#x5668;&amp;#x8FDB;">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190927073447.png">
 
 
@@ -361,29 +361,29 @@
       
         <!-- toc -->
 <!-- tocstop -->
-<p>树莓派烧写完TF卡镜像后无法自动连接WIFI，还需要显示器进行配置好网络后才能SSH连接进行配置，非常不方便。按如下配置即可自动配置好WIFI连接。</p>
+<p>&#x6811;&#x8393;&#x6D3E;&#x70E7;&#x5199;&#x5B8C;TF&#x5361;&#x955C;&#x50CF;&#x540E;&#x65E0;&#x6CD5;&#x81EA;&#x52A8;&#x8FDE;&#x63A5;WIFI&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x663E;&#x793A;&#x5668;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x597D;&#x7F51;&#x7EDC;&#x540E;&#x624D;&#x80FD;SSH&#x8FDE;&#x63A5;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x975E;&#x5E38;&#x4E0D;&#x65B9;&#x4FBF;&#x3002;&#x6309;&#x5982;&#x4E0B;&#x914D;&#x7F6E;&#x5373;&#x53EF;&#x81EA;&#x52A8;&#x914D;&#x7F6E;&#x597D;WIFI&#x8FDE;&#x63A5;&#x3002;</p>
 <ol>
-<li><p>烧写完TF卡后，在根目录下建立空白 ssh 文件（文件内容为空）,打开树莓派SSH服务。</p>
+<li><p>&#x70E7;&#x5199;&#x5B8C;TF&#x5361;&#x540E;&#xFF0C;&#x5728;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x5EFA;&#x7ACB;&#x7A7A;&#x767D; ssh &#x6587;&#x4EF6;&#xFF08;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x4E3A;&#x7A7A;&#xFF09;,&#x6253;&#x5F00;&#x6811;&#x8393;&#x6D3E;SSH&#x670D;&#x52A1;&#x3002;</p>
 </li>
-<li><p>在根目录下建立文件： wpa_supplicant.conf 。内容如下:</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">country=CN</span><br><span class="line">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev</span><br><span class="line">update_config=1</span><br><span class="line">	 </span><br><span class="line">network=&#123;</span><br><span class="line">	ssid="wifi名称"</span><br><span class="line">	psk="wifi密码"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>&#x5728;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x5EFA;&#x7ACB;&#x6587;&#x4EF6;&#xFF1A; wpa_supplicant.conf &#x3002;&#x5185;&#x5BB9;&#x5982;&#x4E0B;:</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">country=CN</span><br><span class="line">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev</span><br><span class="line">update_config=1</span><br><span class="line">	 </span><br><span class="line">network={</span><br><span class="line">	ssid=&quot;wifi&#x540D;&#x79F0;&quot;</span><br><span class="line">	psk=&quot;wifi&#x5BC6;&#x7801;&quot;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>将制作好的TF放进树莓派启动，在路由器下查看树莓派的IP地址，使用SSH连接并登陆,账号密码： pi , raspberry 。</p>
+<li><p>&#x5C06;&#x5236;&#x4F5C;&#x597D;&#x7684;TF&#x653E;&#x8FDB;&#x6811;&#x8393;&#x6D3E;&#x542F;&#x52A8;&#xFF0C;&#x5728;&#x8DEF;&#x7531;&#x5668;&#x4E0B;&#x67E5;&#x770B;&#x6811;&#x8393;&#x6D3E;&#x7684;IP&#x5730;&#x5740;&#xFF0C;&#x4F7F;&#x7528;SSH&#x8FDE;&#x63A5;&#x5E76;&#x767B;&#x9646;,&#x8D26;&#x53F7;&#x5BC6;&#x7801;&#xFF1A; pi , raspberry &#x3002;</p>
 </li>
-<li><p>登陆进树莓派后，进行配置:</p>
+<li><p>&#x767B;&#x9646;&#x8FDB;&#x6811;&#x8393;&#x6D3E;&#x540E;&#xFF0C;&#x8FDB;&#x884C;&#x914D;&#x7F6E;:</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo raspi-config</span><br></pre></td></tr></table></figure>
 <p> <img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190927073447.png" alt="raspconfig"></p>
-<p> 进入interfacing options选择开启VNC服务：</p>
+<p> &#x8FDB;&#x5165;interfacing options&#x9009;&#x62E9;&#x5F00;&#x542F;VNC&#x670D;&#x52A1;&#xFF1A;</p>
 <p> <img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190927073609.png" alt="vncselct"></p>
 </li>
-<li><p>配置开机自动进入desktop桌面</p>
+<li><p>&#x914D;&#x7F6E;&#x5F00;&#x673A;&#x81EA;&#x52A8;&#x8FDB;&#x5165;desktop&#x684C;&#x9762;</p>
 <p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190927080331.png" alt="login"></p>
 </li>
-<li><p>下载 VNC viewer即可连上树莓派桌面进行操作。</p>
-<p> 初始用户名 pi，密码为 raspberry</p>
+<li><p>&#x4E0B;&#x8F7D; VNC viewer&#x5373;&#x53EF;&#x8FDE;&#x4E0A;&#x6811;&#x8393;&#x6D3E;&#x684C;&#x9762;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;</p>
+<p> &#x521D;&#x59CB;&#x7528;&#x6237;&#x540D; pi&#xFF0C;&#x5BC6;&#x7801;&#x4E3A; raspberry</p>
 <p> <a href="https://www.realvnc.com/en/connect/download/viewer/" target="_blank" rel="noopener">https://www.realvnc.com/en/connect/download/viewer/</a></p>
 </li>
-<li><p>记得一定要做步骤6 。。否则仍然不能成功。</p>
+<li><p>&#x8BB0;&#x5F97;&#x4E00;&#x5B9A;&#x8981;&#x505A;&#x6B65;&#x9AA4;6 &#x3002;&#x3002;&#x5426;&#x5219;&#x4ECD;&#x7136;&#x4E0D;&#x80FD;&#x6210;&#x529F;&#x3002;</p>
 </li>
 </ol>
 <p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20190927081559.png" alt="vnc OK"></p>
