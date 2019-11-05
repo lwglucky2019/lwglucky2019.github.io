@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 
 
@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="目的：立体校正就是，把实际中非共面行对准的两幅图像，校正成共面行对准，提高匹配搜索的效率,因为二维搜索变为一维搜索啦！（共面行对准：两摄像机图像平面在同一平面上，且同一点投影到两个摄像机图像平面时，应该在两个像素坐标系的同一行，这个是在数学上进行的对准而非物理实际上，一般在实景图片立体匹配之前都要进行校准）。 视觉系统的三大坐标系：世界坐标系，摄像机坐标系和图像坐标系。  参考https://ww">
+<meta name="description" content="&amp;#x76EE;&amp;#x7684;&amp;#xFF1A;&amp;#x7ACB;&amp;#x4F53;&amp;#x6821;&amp;#x6B63;&amp;#x5C31;&amp;#x662F;&amp;#xFF0C;&amp;#x628A;&amp;#x5B9E;&amp;#x9645;&amp;#x4E2D;&amp;#x975E;&amp;#x5171;&amp;#x9762;&amp;#x884C;&amp;#x5BF9;&amp;#x51C6;&amp;#x7684;&amp;#x4E24;&amp;#x5E45;&amp;#x56FE;&amp;#x50CF;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="双目立体视觉立体校正">
 <meta property="og:url" content="http://yoursite.com/2019/10/31/双目立体视觉立体校正/index.html">
 <meta property="og:site_name" content="WeiGuangLi">
-<meta property="og:description" content="目的：立体校正就是，把实际中非共面行对准的两幅图像，校正成共面行对准，提高匹配搜索的效率,因为二维搜索变为一维搜索啦！（共面行对准：两摄像机图像平面在同一平面上，且同一点投影到两个摄像机图像平面时，应该在两个像素坐标系的同一行，这个是在数学上进行的对准而非物理实际上，一般在实景图片立体匹配之前都要进行校准）。 视觉系统的三大坐标系：世界坐标系，摄像机坐标系和图像坐标系。  参考https://ww">
+<meta property="og:description" content="&amp;#x76EE;&amp;#x7684;&amp;#xFF1A;&amp;#x7ACB;&amp;#x4F53;&amp;#x6821;&amp;#x6B63;&amp;#x5C31;&amp;#x662F;&amp;#xFF0C;&amp;#x628A;&amp;#x5B9E;&amp;#x9645;&amp;#x4E2D;&amp;#x975E;&amp;#x5171;&amp;#x9762;&amp;#x884C;&amp;#x5BF9;&amp;#x51C6;&amp;#x7684;&amp;#x4E24;&amp;#x5E45;&amp;#x56FE;&amp;#x50CF;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/.com//坐标系.png">
-<meta property="og:updated_time" content="2019-11-04T23:33:50.395Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/31/双目立体视觉立体校正/坐标系.png">
+<meta property="og:updated_time" content="2019-11-05T00:02:30.085Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="双目立体视觉立体校正">
-<meta name="twitter:description" content="目的：立体校正就是，把实际中非共面行对准的两幅图像，校正成共面行对准，提高匹配搜索的效率,因为二维搜索变为一维搜索啦！（共面行对准：两摄像机图像平面在同一平面上，且同一点投影到两个摄像机图像平面时，应该在两个像素坐标系的同一行，这个是在数学上进行的对准而非物理实际上，一般在实景图片立体匹配之前都要进行校准）。 视觉系统的三大坐标系：世界坐标系，摄像机坐标系和图像坐标系。  参考https://ww">
-<meta name="twitter:image" content="http://yoursite.com/.com//坐标系.png">
+<meta name="twitter:description" content="&amp;#x76EE;&amp;#x7684;&amp;#xFF1A;&amp;#x7ACB;&amp;#x4F53;&amp;#x6821;&amp;#x6B63;&amp;#x5C31;&amp;#x662F;&amp;#xFF0C;&amp;#x628A;&amp;#x5B9E;&amp;#x9645;&amp;#x4E2D;&amp;#x975E;&amp;#x5171;&amp;#x9762;&amp;#x884C;&amp;#x5BF9;&amp;#x51C6;&amp;#x7684;&amp;#x4E24;&amp;#x5E45;&amp;#x56FE;&amp;#x50CF;">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/31/双目立体视觉立体校正/坐标系.png">
 
 
 
@@ -355,10 +355,11 @@
       
 
       
-        <p>目的：立体校正就是，把实际中非共面行对准的两幅图像，校正成共面行对准，提高匹配搜索的效率,因为二维搜索变为一维搜索啦！（共面行对准：两摄像机图像平面在同一平面上，且同一点投影到两个摄像机图像平面时，应该在两个像素坐标系的同一行，这个是在数学上进行的对准而非物理实际上，一般在实景图片立体匹配之前都要进行校准）。</p>
-<p>视觉系统的三大坐标系：世界坐标系，摄像机坐标系和图像坐标系。</p>
-<p><img src="2019/10/31/双目立体视觉立体校正/坐标系.png" alt="坐标系"></p>
-<h3><span id="参考">参考</span></h3><p><a href="https://www.cnblogs.com/dverdon/p/5609124.html" target="_blank" rel="noopener">https://www.cnblogs.com/dverdon/p/5609124.html</a><br><a href="https://www.cnblogs.com/riddick/p/8486223.html" target="_blank" rel="noopener">https://www.cnblogs.com/riddick/p/8486223.html</a><br><a href="https://www.cnblogs.com/riddick/p/8511960.html" target="_blank" rel="noopener">https://www.cnblogs.com/riddick/p/8511960.html</a><br><a href="https://www.cnblogs.com/riddick/p/8922381.html" target="_blank" rel="noopener">https://www.cnblogs.com/riddick/p/8922381.html</a></p>
+        <p>&#x76EE;&#x7684;&#xFF1A;&#x7ACB;&#x4F53;&#x6821;&#x6B63;&#x5C31;&#x662F;&#xFF0C;&#x628A;&#x5B9E;&#x9645;&#x4E2D;&#x975E;&#x5171;&#x9762;&#x884C;&#x5BF9;&#x51C6;&#x7684;&#x4E24;&#x5E45;&#x56FE;&#x50CF;&#xFF0C;&#x6821;&#x6B63;&#x6210;&#x5171;&#x9762;&#x884C;&#x5BF9;&#x51C6;&#xFF0C;&#x63D0;&#x9AD8;&#x5339;&#x914D;&#x641C;&#x7D22;&#x7684;&#x6548;&#x7387;,&#x56E0;&#x4E3A;&#x4E8C;&#x7EF4;&#x641C;&#x7D22;&#x53D8;&#x4E3A;&#x4E00;&#x7EF4;&#x641C;&#x7D22;&#x5566;&#xFF01;&#xFF08;&#x5171;&#x9762;&#x884C;&#x5BF9;&#x51C6;&#xFF1A;&#x4E24;&#x6444;&#x50CF;&#x673A;&#x56FE;&#x50CF;&#x5E73;&#x9762;&#x5728;&#x540C;&#x4E00;&#x5E73;&#x9762;&#x4E0A;&#xFF0C;&#x4E14;&#x540C;&#x4E00;&#x70B9;&#x6295;&#x5F71;&#x5230;&#x4E24;&#x4E2A;&#x6444;&#x50CF;&#x673A;&#x56FE;&#x50CF;&#x5E73;&#x9762;&#x65F6;&#xFF0C;&#x5E94;&#x8BE5;&#x5728;&#x4E24;&#x4E2A;&#x50CF;&#x7D20;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x540C;&#x4E00;&#x884C;&#xFF0C;&#x8FD9;&#x4E2A;&#x662F;&#x5728;&#x6570;&#x5B66;&#x4E0A;&#x8FDB;&#x884C;&#x7684;&#x5BF9;&#x51C6;&#x800C;&#x975E;&#x7269;&#x7406;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x4E00;&#x822C;&#x5728;&#x5B9E;&#x666F;&#x56FE;&#x7247;&#x7ACB;&#x4F53;&#x5339;&#x914D;&#x4E4B;&#x524D;&#x90FD;&#x8981;&#x8FDB;&#x884C;&#x6821;&#x51C6;&#xFF09;&#x3002;</p>
+<p>&#x89C6;&#x89C9;&#x7CFB;&#x7EDF;&#x7684;&#x4E09;&#x5927;&#x5750;&#x6807;&#x7CFB;&#xFF1A;&#x4E16;&#x754C;&#x5750;&#x6807;&#x7CFB;&#xFF0C;&#x6444;&#x50CF;&#x673A;&#x5750;&#x6807;&#x7CFB;&#x548C;&#x56FE;&#x50CF;&#x5750;&#x6807;&#x7CFB;&#x3002;</p>
+<p><img src="/2019/10/31/&#x53CC;&#x76EE;&#x7ACB;&#x4F53;&#x89C6;&#x89C9;&#x7ACB;&#x4F53;&#x6821;&#x6B63;/&#x5750;&#x6807;&#x7CFB;.png" alt="&#x5750;&#x6807;&#x7CFB;"></p>
+
+<h3><span id="x53c2x8003">&#x53C2;&#x8003;</span></h3><p><a href="https://www.cnblogs.com/dverdon/p/5609124.html" target="_blank" rel="noopener">https://www.cnblogs.com/dverdon/p/5609124.html</a><br><a href="https://www.cnblogs.com/riddick/p/8486223.html" target="_blank" rel="noopener">https://www.cnblogs.com/riddick/p/8486223.html</a><br><a href="https://www.cnblogs.com/riddick/p/8511960.html" target="_blank" rel="noopener">https://www.cnblogs.com/riddick/p/8511960.html</a><br><a href="https://www.cnblogs.com/riddick/p/8922381.html" target="_blank" rel="noopener">https://www.cnblogs.com/riddick/p/8922381.html</a></p>
 
       
     </div>
