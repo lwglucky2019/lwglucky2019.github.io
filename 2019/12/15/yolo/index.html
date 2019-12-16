@@ -90,7 +90,9 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191215214752.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191215215208.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191215215246.png">
-<meta property="og:updated_time" content="2019-12-16T02:36:05.003Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191216164708.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191216164801.png">
+<meta property="og:updated_time" content="2019-12-16T08:50:13.517Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="yolo">
 <meta name="twitter:description" content="YOLO &amp;#x672C;&amp;#x6587;GitHub &amp;#x6E90;&amp;#x7801;&amp;#xFF1A;https://github.com/qqwweee/keras-yolo3 yolov3&amp;#x8BBA;&amp;#x6587;&amp;#x5730;&amp;#x5740;&amp;#xFF1A;https://pjreddie.com/media/files/papers/YOLOv3.pdf yolov3&amp;#x5B9">
@@ -345,6 +347,38 @@
 <p>2&#xFF1A;&#x8FD0;&#x884C;&#x7F51;&#x7EDC;&#x3002;YOLO&#x7684;CNN&#x7F51;&#x7EDC;&#x628A;&#x56FE;&#x7247;&#x5206;&#x6210; <strong><em>S\</em>S*</strong> &#x4E2A;&#x7F51;&#x683C;&#xFF08;yolov3&#x591A;&#x5C3A;&#x5EA6;&#x9884;&#x6D4B;&#xFF0C;&#x8F93;&#x51FA;3&#x5C42;&#xFF0C;&#x6BCF;&#x5C42; S <em> S&#x4E2A;&#x7F51;&#x683C;&#xFF0C;&#x5206;&#x522B;&#x4E3A; 13</em>13 &#xFF0C;26 <em>26 &#xFF0C;52</em>52&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x6BCF;&#x4E2A;&#x5355;&#x5143;&#x683C;&#x8D1F;&#x8D23;&#x53BB;&#x68C0;&#x6D4B;&#x90A3;&#x4E9B;&#x4E2D;&#x5FC3;&#x70B9;&#x843D;&#x5728;&#x8BE5;&#x683C;&#x5B50;&#x5185;&#x7684;&#x76EE;&#x6807;&#xFF0C;&#x5982;&#x56FE;&#x4E8C;&#x6240;&#x793A;&#x3002;  &#x6BCF;&#x4E2A;&#x5355;&#x5143;&#x683C;&#x9700;&#x8981;&#x9884;&#x6D4B; <strong><em>3\</em>&#xFF08;4+1+B&#xFF09;*</strong>&#x4E2A;&#x503C;&#x3002;&#x5982;&#x679C;&#x5C06;&#x8F93;&#x5165;&#x56FE;&#x7247;&#x5212;&#x5206;&#x4E3A; <strong><em>S\</em>S*</strong> &#x7F51;&#x683C;&#xFF0C;&#x90A3;&#x4E48;&#x6BCF;&#x5C42;&#x6700;&#x7EC8;&#x9884;&#x6D4B;&#x503C;&#x4E3A; <strong><em>S\</em>S*3*(4+1+B)*</strong> &#x5927;&#x5C0F;&#x7684;&#x5F20;&#x91CF;&#x3002; B&#xFF1A;&#x7C7B;&#x522B;&#x6570;&#xFF08;coco&#x96C6;&#x4E3A;80&#x7C7B;&#xFF09;&#xFF0C;&#x5373;B=80.     3 &#x4E3A;&#x6BCF;&#x5C42;anchorbox&#x6570;&#x91CF;&#xFF0C;4 &#x4E3A;&#x8FB9;&#x754C;&#x6846;&#x5927;&#x5C0F;&#x548C;&#x4F4D;&#x7F6E;&#xFF08;x , y , w , h &#xFF09;1 &#x4E3A;&#x7F6E;&#x4FE1;&#x5EA6;&#x3002; </p>
 <p> 3: &#x901A;&#x8FC7;NMS&#xFF0C;&#x975E;&#x6781;&#x5927;&#x503C;&#x6291;&#x5236;&#xFF0C;&#x7B5B;&#x9009;&#x51FA;&#x6846;boxes,&#x8F93;&#x51FA;&#x6846;class_boxes&#x548C;&#x7F6E;&#x4FE1;&#x5EA6;class_box_scores&#xFF0C;&#x518D;&#x751F;&#x6210;&#x7C7B;&#x522B;&#x4FE1;&#x606F;classes&#xFF0C;&#x751F;&#x6210;&#x6700;&#x7EC8;&#x7684;&#x68C0;&#x6D4B;&#x6570;&#x636E;&#x6846;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;</p>
 <p> <img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191215215208.png" alt="11"><br> <img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191215215246.png" alt="22"></p>
+<p>&#x591A;&#x5C3A;&#x5EA6;&#xFF1A;</p>
+<p>yolov3&#x91C7;&#x7528;&#x591A;&#x5C3A;&#x5EA6;&#x9884;&#x6D4B;&#x3002;&#x3010;&#xFF08;13<em>13&#xFF09;&#xFF08;26</em>26&#xFF09;&#xFF08;52*52&#xFF09;&#x3011;</p>
+<p>&#x2022;&#x5C0F;&#x5C3A;&#x5EA6;&#xFF1A;&#xFF08;13*13&#x7684;feature map&#xFF09;</p>
+<pre><code>&#x7F51;&#x7EDC;&#x63A5;&#x6536;&#x4E00;&#x5F20;&#xFF08;416*416&#xFF09;&#x7684;&#x56FE;&#xFF0C;&#x7ECF;&#x8FC7;5&#x4E2A;&#x6B65;&#x957F;&#x4E3A;2&#x7684;&#x5377;&#x79EF;&#x6765;&#x8FDB;&#x884C;&#x964D;&#x91C7;&#x6837;&#xFF08;416 / 2&#x2C6;5 = 13&#xFF09;.&#x8F93;&#x51FA;&#xFF08;13*13&#xFF09;&#x3002;
+</code></pre><p>&#x2022;&#x4E2D;&#x5C3A;&#x5EA6; &#xFF1A; &#xFF08;26*26&#x7684;feature map&#xFF09;</p>
+<pre><code>&#x4ECE;&#x5C0F;&#x5C3A;&#x5EA6;&#x4E2D;&#x7684;&#x5012;&#x6570;&#x7B2C;&#x4E8C;&#x5C42;&#x7684;&#x5377;&#x79EF;&#x5C42;&#x4E0A;&#x91C7;&#x6837;(x2&#xFF0C;up sampling)&#x518D;&#x4E0E;&#x6700;&#x540E;&#x4E00;&#x4E2A;13x13&#x5927;&#x5C0F;&#x7684;&#x7279;&#x5F81;&#x56FE;&#x76F8;&#x52A0;&#xFF0C;&#x8F93;&#x51FA;&#xFF08;26*26&#xFF09;&#x3002;
+</code></pre><p>&#x2022;&#x5927;&#x5C3A;&#x5EA6;&#xFF1A; &#xFF08;52*52&#x7684;feature map&#xFF09;</p>
+<pre><code>&#x64CD;&#x4F5C;&#x540C;&#x4E2D;&#x5C3A;&#x5EA6;&#x8F93;&#x51FA;&#xFF08;52*52&#xFF09;
+</code></pre><p>&#x597D;&#x5904;&#xFF1A;&#x8BA9;&#x7F51;&#x7EDC;&#x540C;&#x65F6;&#x5B66;&#x4E60;&#x5230;&#x6DF1;&#x5C42;&#x548C;&#x6D45;&#x5C42;&#x7684;&#x7279;&#x5F81;&#xFF0C;&#x901A;&#x8FC7;&#x53E0;&#x52A0;&#x6D45;&#x5C42;&#x7279;&#x5F81;&#x56FE;&#x76F8;&#x90BB;&#x7279;&#x5F81;&#x5230;&#x4E0D;&#x540C;&#x901A;&#x9053;&#xFF08;&#x800C;&#x975E;&#x7A7A;&#x95F4;&#x4F4D;&#x7F6E;&#xFF09;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;Resnet&#x4E2D;&#x7684;identity mapping&#x3002;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x628A;26x26x512&#x7684;&#x7279;&#x5F81;&#x56FE;&#x53E0;&#x52A0;&#x6210;13x13x2048&#x7684;&#x7279;&#x5F81;&#x56FE;&#xFF0C;&#x4E0E;&#x539F;&#x751F;&#x7684;&#x6DF1;&#x5C42;&#x7279;&#x5F81;&#x56FE;&#x76F8;&#x8FDE;&#x63A5;&#xFF0C;&#x4F7F;&#x6A21;&#x578B;&#x6709;&#x4E86;&#x7EC6;&#x7C92;&#x5EA6;&#x7279;&#x5F81;,&#x589E;&#x52A0;&#x5BF9;&#x5C0F;&#x76EE;&#x6807;&#x7684;&#x8BC6;&#x522B;&#x80FD;&#x529B;&#x3002;</p>
+<p>anchor box:</p>
+<p>yolov3 anchor box&#x4E00;&#x5171;&#x6709;9&#x4E2A;&#xFF0C;&#x7531;k-means&#x805A;&#x7C7B;&#x5F97;&#x5230;&#x3002;&#x5728;COCO&#x6570;&#x636E;&#x96C6;&#x4E0A;&#xFF0C;9&#x4E2A;&#x805A;&#x7C7B;&#x662F;&#xFF1A;&#xFF08;10<em>13&#xFF09;;&#xFF08;16</em>30&#xFF09;;&#xFF08;33<em>23&#xFF09;;&#xFF08;30</em>61&#xFF09;;&#xFF08;62<em>45&#xFF09;; &#xFF08;59</em>119&#xFF09;; &#xFF08;116<em>90&#xFF09;; &#xFF08;156</em>198&#xFF09;; &#xFF08;373*326&#xFF09;&#x3002;</p>
+<p>&#x4E0D;&#x540C;&#x5C3A;&#x5BF8;&#x7279;&#x5F81;&#x56FE;&#x5BF9;&#x5E94;&#x4E0D;&#x540C;&#x5927;&#x5C0F;&#x7684;&#x5148;&#x9A8C;&#x6846;&#x3002;</p>
+<pre><code>13*13feature map&#x5BF9;&#x5E94;&#x3010;&#xFF08;116*90&#xFF09;&#xFF0C;&#xFF08;156*198&#xFF09;&#xFF0C;&#xFF08;373*326&#xFF09;&#x3011;
+26*26feature map&#x5BF9;&#x5E94;&#x3010;&#xFF08;30*61&#xFF09;&#xFF0C;&#xFF08;62*45&#xFF09;&#xFF0C;&#xFF08;59*119&#xFF09;&#x3011;
+52*52feature map&#x5BF9;&#x5E94;&#x3010;&#xFF08;10*13&#xFF09;&#xFF0C;&#xFF08;16*30&#xFF09;&#xFF0C;&#xFF08;33*23&#xFF09;&#x3011;
+</code></pre><p>&#x539F;&#x56E0;&#xFF1A;&#x7279;&#x5F81;&#x56FE;&#x8D8A;&#x5927;&#xFF0C;&#x611F;&#x53D7;&#x91CE;&#x8D8A;&#x5C0F;&#x3002;&#x5BF9;&#x5C0F;&#x76EE;&#x6807;&#x8D8A;&#x654F;&#x611F;&#xFF0C;&#x6240;&#x4EE5;&#x9009;&#x7528;&#x5C0F;&#x7684;anchor box&#x3002;</p>
+<pre><code>      &#x7279;&#x5F81;&#x56FE;&#x8D8A;&#x5C0F;&#xFF0C;&#x611F;&#x53D7;&#x91CE;&#x8D8A;&#x5927;&#x3002;&#x5BF9;&#x5927;&#x76EE;&#x6807;&#x8D8A;&#x654F;&#x611F;&#xFF0C;&#x6240;&#x4EE5;&#x9009;&#x7528;&#x5927;&#x7684;anchor box&#x3002;
+</code></pre><p>&#x8FB9;&#x6846;&#x9884;&#x6D4B;&#xFF1A;</p>
+<p>&#x9884;&#x6D4B;tx ty tw th</p>
+<pre><code>&#x5BF9;tx&#x548C;ty&#x8FDB;&#x884C;sigmoid&#xFF0C;&#x5E76;&#x52A0;&#x4E0A;&#x5BF9;&#x5E94;&#x7684;offset&#xFF08;&#x4E0B;&#x56FE;Cx, Cy&#xFF09;
+&#x5BF9;th&#x548C;tw&#x8FDB;&#x884C;exp&#xFF0C;&#x5E76;&#x4E58;&#x4EE5;&#x5BF9;&#x5E94;&#x7684;&#x951A;&#x70B9;&#x503C;
+&#x5BF9;tx,ty,th,tw&#x4E58;&#x4EE5;&#x5BF9;&#x5E94;&#x7684;&#x6B65;&#x5E45;&#xFF0C;&#x5373;&#xFF1A;416/13, 416 &#x2044; 26, 416 &#x2044; 52
+&#x6700;&#x540E;&#xFF0C;&#x4F7F;&#x7528;sigmoid&#x5BF9;Objectness&#x548C;Classes confidence&#x8FDB;&#x884C;sigmoid&#x5F97;&#x5230;0~1&#x7684;&#x6982;&#x7387;&#xFF0C;&#x4E4B;&#x6240;&#x4EE5;&#x7528;sigmoid&#x53D6;&#x4EE3;&#x4E4B;&#x524D;&#x7248;&#x672C;&#x7684;softmax&#xFF0C;&#x539F;&#x56E0;&#x662F;softmax&#x4F1A;&#x6269;&#x5927;&#x6700;&#x5927;&#x7C7B;&#x522B;&#x6982;&#x7387;&#x503C;&#x800C;&#x6291;&#x5236;&#x5176;&#x4ED6;&#x7C7B;&#x522B;&#x6982;&#x7387;&#x503C;
+</code></pre><p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191216164708.png" alt="vv"></p>
+<p>(tx,ty) :&#x76EE;&#x6807;&#x4E2D;&#x5FC3;&#x70B9;&#x76F8;&#x5BF9;&#x4E8E;&#x8BE5;&#x70B9;&#x6240;&#x5728;&#x7F51;&#x683C;&#x5DE6;&#x4E0A;&#x89D2;&#x7684;&#x504F;&#x79FB;&#x91CF;&#xFF0C;&#x7ECF;&#x8FC7;sigmoid&#x5F52;&#x4E00;&#x5316;&#x3002;&#x5373;&#x503C;&#x5C5E;&#x4E8E;&#x3010;0,1&#x3011;&#x3002;&#x5982;&#x56FE;&#x7EA6;&#xFF08;0.3 , 0.4&#xFF09;</p>
+<p>(cx,cy):&#x8BE5;&#x70B9;&#x6240;&#x5728;&#x7F51;&#x683C;&#x7684;&#x5DE6;&#x4E0A;&#x89D2;&#x8DDD;&#x79BB;&#x6700;&#x5DE6;&#x4E0A;&#x89D2;&#x76F8;&#x5DEE;&#x7684;&#x683C;&#x5B50;&#x6570;&#x3002;&#x5982;&#x56FE;&#xFF08;1,1&#xFF09;</p>
+<p>(pw,ph):anchor box &#x7684;&#x8FB9;&#x957F;</p>
+<p>(tw,th):&#x9884;&#x6D4B;&#x8FB9;&#x6846;&#x7684;&#x5BBD;&#x548C;&#x9AD8;</p>
+<p>PS&#xFF1A;&#x6700;&#x7EC8;&#x5F97;&#x5230;&#x7684;&#x8FB9;&#x6846;&#x5750;&#x6807;&#x503C;&#x662F;bx,by,bw,bh.&#x800C;&#x7F51;&#x7EDC;&#x5B66;&#x4E60;&#x76EE;&#x6807;&#x662F;tx,ty,tw,th</p>
+<p>&#x635F;&#x5931;&#x51FD;&#x6570;LOSS</p>
+<pre><code>YOLO V3&#x628A;YOLOV2&#x4E2D;&#x7684;Softmax loss&#x53D8;&#x6210;Logistic loss
+</code></pre><p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20191216164801.png" alt="de"></p>
 <h4><span id="x53c2x8003x6587x732e">&#x53C2;&#x8003;&#x6587;&#x732E;</span></h4><p> <a href="http://www.likecs.com/default/index/show?id=38392" target="_blank" rel="noopener">http://www.likecs.com/default/index/show?id=38392</a></p>
 
       
