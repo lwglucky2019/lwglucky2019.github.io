@@ -79,17 +79,22 @@
 
 
 
-<meta name="description" content="&amp;#x53C2;&amp;#x8003;&amp;#x6587;&amp;#x732E;:https://github.com/TommyZihao/zihaopytorch/blob/master/%E5%AF%B9Fashion-MNIST%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%AD%E7%9A%84%E6%97%B6%E5%B0%9A%E7%89%A9%E5%93%81%E8%BF%9B">
+<meta name="description" content="RNN&amp;#x7684;&amp;#x7ED3;&amp;#x6784;RNN&amp;#xFF08;recurrent neural Network&amp;#xFF09;&amp;#x5FAA;&amp;#x73AF;&amp;#x795E;&amp;#x7ECF;&amp;#x7F51;&amp;#x7EDC;&amp;#x4E3B;&amp;#x8981;&amp;#x7528;&amp;#x4E8E;&amp;#x81EA;&amp;#x7136;&amp;#x8BED;&amp;#x8A00;&amp;#x5904;&amp;#x7406;&amp;#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用pytorch搭建全连接神经网络例子">
-<meta property="og:url" content="http://yoursite.com/2019/10/14/用pytorch搭建全连接神经网络例子/index.html">
+<meta property="og:title" content="RNN入门">
+<meta property="og:url" content="http://yoursite.com/2020/01/06/RNN入门/index.html">
 <meta property="og:site_name" content="WeiGuangLi">
-<meta property="og:description" content="&amp;#x53C2;&amp;#x8003;&amp;#x6587;&amp;#x732E;:https://github.com/TommyZihao/zihaopytorch/blob/master/%E5%AF%B9Fashion-MNIST%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%AD%E7%9A%84%E6%97%B6%E5%B0%9A%E7%89%A9%E5%93%81%E8%BF%9B">
+<meta property="og:description" content="RNN&amp;#x7684;&amp;#x7ED3;&amp;#x6784;RNN&amp;#xFF08;recurrent neural Network&amp;#xFF09;&amp;#x5FAA;&amp;#x73AF;&amp;#x795E;&amp;#x7ECF;&amp;#x7F51;&amp;#x7EDC;&amp;#x4E3B;&amp;#x8981;&amp;#x7528;&amp;#x4E8E;&amp;#x81EA;&amp;#x7136;&amp;#x8BED;&amp;#x8A00;&amp;#x5904;&amp;#x7406;&amp;#">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-13T16:14:20.449Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/logo.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20200106204045.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20200106204123.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/20200106204153.png">
+<meta property="og:updated_time" content="2020-01-06T12:44:56.719Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用pytorch搭建全连接神经网络例子">
-<meta name="twitter:description" content="&amp;#x53C2;&amp;#x8003;&amp;#x6587;&amp;#x732E;:https://github.com/TommyZihao/zihaopytorch/blob/master/%E5%AF%B9Fashion-MNIST%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%AD%E7%9A%84%E6%97%B6%E5%B0%9A%E7%89%A9%E5%93%81%E8%BF%9B">
+<meta name="twitter:title" content="RNN入门">
+<meta name="twitter:description" content="RNN&amp;#x7684;&amp;#x7ED3;&amp;#x6784;RNN&amp;#xFF08;recurrent neural Network&amp;#xFF09;&amp;#x5FAA;&amp;#x73AF;&amp;#x795E;&amp;#x7ECF;&amp;#x7F51;&amp;#x7EDC;&amp;#x4E3B;&amp;#x8981;&amp;#x7528;&amp;#x4E8E;&amp;#x81EA;&amp;#x7136;&amp;#x8BED;&amp;#x8A00;&amp;#x5904;&amp;#x7406;&amp;#">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/lwglucky/BLOG/master/logo.png">
 
 
 
@@ -119,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/10/14/用pytorch搭建全连接神经网络例子/">
+  <link rel="canonical" href="http://yoursite.com/2020/01/06/RNN入门/">
 
 
 
 
 
-  <title>用pytorch搭建全连接神经网络例子 | WeiGuangLi</title>
+  <title>RNN入门 | WeiGuangLi</title>
   
 
 
@@ -264,7 +269,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/14/用pytorch搭建全连接神经网络例子/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/06/RNN入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lwglucky">
@@ -281,7 +286,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">用pytorch搭建全连接神经网络例子</h1>
+          <h1 class="post-title" itemprop="name headline">RNN入门</h1>
         
 
         <div class="post-meta">
@@ -293,8 +298,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-14T00:13:17+08:00">
-                2019-10-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-06T20:32:58+08:00">
+                2020-01-06
               </time>
             
 
@@ -353,8 +358,12 @@
       
 
       
-        <h3><span id="x53c2x8003x6587x732e">&#x53C2;&#x8003;&#x6587;&#x732E;:</span></h3><p><a href="https://github.com/TommyZihao/zihaopytorch/blob/master/%E5%AF%B9Fashion-MNIST%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%AD%E7%9A%84%E6%97%B6%E5%B0%9A%E7%89%A9%E5%93%81%E8%BF%9B%E8%A1%8C%E5%88%86%E7%B1%BB.ipynb" target="_blank" rel="noopener">https://github.com/TommyZihao/zihaopytorch/blob/master/%E5%AF%B9Fashion-MNIST%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%AD%E7%9A%84%E6%97%B6%E5%B0%9A%E7%89%A9%E5%93%81%E8%BF%9B%E8%A1%8C%E5%88%86%E7%B1%BB.ipynb</a></p>
-
+        <h2><span id="rnnx7684x7ed3x6784">RNN&#x7684;&#x7ED3;&#x6784;</span></h2><p>RNN&#xFF08;recurrent neural Network&#xFF09;&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;<br>&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5904;&#x7406;&#xFF08;nature language processing&#xFF0C;NLP&#xFF09;<br>RNN&#x4E3B;&#x8981;&#x7528;&#x9014;&#x662F;&#x5904;&#x7406;&#x548C;&#x9884;&#x6D4B;&#x5E8F;&#x5217;&#x6570;&#x636E;<br>RNN&#x5E7F;&#x6CDB;&#x7684;&#x7528;&#x4E8E; &#x8BED;&#x97F3;&#x8BC6;&#x522B;&#x3001;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x3001;&#x673A;&#x5668;&#x7FFB;&#x8BD1;<br>RNN&#x7684;&#x6765;&#x6E90;&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x523B;&#x753B;&#x4E00;&#x4E2A;&#x5E8F;&#x5217;&#x5F53;&#x524D;&#x7684;&#x8F93;&#x51FA;&#x4E0E;&#x4E4B;&#x524D;&#x7684;&#x4FE1;&#x606F;&#x5F71;&#x54CD;&#x540E;&#x9762;&#x8282;&#x70B9;&#x7684;&#x8F93;&#x51FA;<br>RNN &#x662F;&#x5305;&#x542B;&#x5FAA;&#x73AF;&#x7684;&#x7F51;&#x7EDC;&#xFF0C;&#x5141;&#x8BB8;&#x4FE1;&#x606F;&#x7684;&#x6301;&#x4E45;&#x5316;&#x3002;<br>RNN&#x4F1A;&#x8BB0;&#x5FC6;&#x4E4B;&#x524D;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x5229;&#x7528;&#x4E4B;&#x524D;&#x7684;&#x4FE1;&#x606F;&#x5F71;&#x54CD;&#x540E;&#x9762;&#x8282;&#x70B9;&#x7684;&#x8F93;&#x51FA;&#x3002;<br>RNN&#x7684;&#x9690;&#x85CF;&#x5C42;&#x4E4B;&#x95F4;&#x7684;&#x8282;&#x70B9;&#x662F;&#x6709;&#x76F8;&#x8FDE;&#x7684;&#xFF0C;&#x9690;&#x85CF;&#x5C42;&#x7684;&#x8F93;&#x5165;&#x4E0D;&#x4EC5;&#x4EC5;&#x5305;&#x62EC;&#x8F93;&#x5165;&#x5C42;&#x7684;&#x8F93;&#x51FA;&#xFF0C;&#x8FD8;&#x5305;&#x62EC;&#x4E0A;&#x4E00;&#x65F6;&#x523B;&#x9690;&#x85CF;&#x5C42;&#x7684;&#x8F93;&#x51FA;&#x3002;<br>RNN&#x4F1A;&#x5BF9;&#x4E8E;&#x6BCF;&#x4E00;&#x4E2A;&#x65F6;&#x523B;&#x7684;&#x8F93;&#x5165;&#x7ED3;&#x5408;&#x5F53;&#x524D;&#x6A21;&#x578B;&#x7684;&#x72B6;&#x6001;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x8F93;&#x51FA;&#x3002;<br>RNN&#x7406;&#x8BBA;&#x4E0A;&#x88AB;&#x770B;&#x4F5C;&#x540C;&#x4E00;&#x4E2A;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7ED3;&#x6784;&#x88AB;&#x65E0;&#x9650;&#x590D;&#x5236;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x76EE;&#x524D;RNN&#x65E0;&#x6CD5;&#x505A;&#x5230;&#x771F;&#x6B63;&#x7684;&#x65E0;&#x9650;&#x5FAA;&#x73AF;&#xFF0C;&#x4E00;&#x822C;&#x4EE5;&#x5FAA;&#x73AF;&#x4F53;&#x5C55;&#x5F00;&#x3002;</p>
+<p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/logo.png" alt="LSTM_CELL"></p>
+<p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20200106204045.png" alt="unfold_LSTM_CELL"></p>
+<p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20200106204123.png" alt="LSTM_SHEME"></p>
+<p><img src="https://raw.githubusercontent.com/lwglucky/BLOG/master/20200106204153.png" alt="LSTM_EXAMPLE"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> tensorflow.contrib <span class="keyword">import</span> rnn</span><br><span class="line"><span class="keyword">from</span> tensorflow.examples.tutorials.mnist <span class="keyword">import</span> input_data</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">mnist = input_data.read_data_sets(<span class="string">&apos;data&apos;</span>,one_hot = <span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">tf.set_random_seed(<span class="number">1</span>)</span><br><span class="line">np.random.seed(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># &#x5B9A;&#x4E49;&#x8D85;&#x53C2;&#x6570;</span></span><br><span class="line">BATCH_SIZE=<span class="number">64</span></span><br><span class="line">TIME_STEP=<span class="number">28</span></span><br><span class="line">INPUT_SIZE=<span class="number">28</span></span><br><span class="line">LR=<span class="number">0.1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">test_x=mnist.test.images[:<span class="number">2000</span>]</span><br><span class="line">test_y=mnist.test.labels[:<span class="number">2000</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># &#x753B;&#x51FA;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#x89C2;&#x5BDF;&#x4E00;&#x4E0B;</span></span><br><span class="line"><span class="string">&apos;&apos;&apos;</span></span><br><span class="line"><span class="string">print(mnist.train.images.shape)</span></span><br><span class="line"><span class="string">print(mnist.train.labels.shape)</span></span><br><span class="line"><span class="string">plt.imshow(mnist.train.images[0].reshape((28,28)),cmap=&quot;gray&quot;)</span></span><br><span class="line"><span class="string">plt.title(&quot;%i&quot;%np.argmax(mnist.train.labels[0]))</span></span><br><span class="line"><span class="string">plt.show()</span></span><br><span class="line"><span class="string">exit()</span></span><br><span class="line"><span class="string">&apos;&apos;&apos;</span></span><br><span class="line"></span><br><span class="line">tf_x = tf.placeholder(<span class="string">&apos;float&apos;</span> , [<span class="literal">None</span> , TIME_STEP*INPUT_SIZE])</span><br><span class="line">image = tf.reshape(tf_x,[<span class="number">-1</span>,TIME_STEP,INPUT_SIZE])</span><br><span class="line">tf_y = tf.placeholder(tf.int32 , [<span class="literal">None</span> , <span class="number">10</span>])</span><br><span class="line"></span><br><span class="line">rnn_cell = tf.contrib.rnn.BasicLSTMCell(num_units=<span class="number">80</span>,forget_bias = <span class="number">1.0</span>)</span><br><span class="line"><span class="comment">#init_state = rnn_cell.zero_state(batch_size, dtype=tf.float32)</span></span><br><span class="line">outputs,(h_c,h_n) = tf.nn.dynamic_rnn(rnn_cell , </span><br><span class="line">    image , initial_state = <span class="literal">None</span>, <span class="comment">#init_state, </span></span><br><span class="line">    dtype=tf.float32 ,  time_major=<span class="literal">False</span> )</span><br><span class="line"></span><br><span class="line">output = tf.layers.dense(outputs[:,<span class="number">-1</span>,:] , <span class="number">10</span>)</span><br><span class="line">loss = tf.losses.softmax_cross_entropy(onehot_labels=tf_y,logits=output)</span><br><span class="line"></span><br><span class="line">LR = <span class="number">0.1</span></span><br><span class="line">train_op=tf.train.AdamOptimizer(LR).minimize(loss)</span><br><span class="line"></span><br><span class="line">accuracy=tf.metrics.accuracy(labels=tf.argmax(tf_y,axis=<span class="number">1</span>),predictions=tf.argmax(output,axis=<span class="number">1</span>),)[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">session=tf.Session()</span><br><span class="line"></span><br><span class="line">init_op=tf.group(tf.global_variables_initializer(),tf.local_variables_initializer())</span><br><span class="line"></span><br><span class="line">session.run(init_op)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> step <span class="keyword">in</span> range(<span class="number">1200</span>):</span><br><span class="line">    b_x,b_y=mnist.train.next_batch(BATCH_SIZE)</span><br><span class="line">    _,loss_=session.run([train_op,loss],{tf_x:b_x,tf_y:b_y})</span><br><span class="line">    <span class="keyword">if</span> step%<span class="number">50</span>==<span class="number">0</span>:</span><br><span class="line">        accuracy_=session.run(accuracy,{tf_x:test_x,tf_y:test_y})</span><br><span class="line">        print(<span class="string">&quot;Train loss:%.4f&quot;</span>%loss_,<span class="string">&quot;| Test accuracy:%.2f&quot;</span>%accuracy_)</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -378,8 +387,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/14/人脸识别的例子入门/" rel="next" title="人脸识别的例子入门">
-                <i class="fa fa-chevron-left"></i> 人脸识别的例子入门
+              <a href="/2019/12/15/yolo/" rel="next" title="yolo">
+                <i class="fa fa-chevron-left"></i> yolo
               </a>
             
           </div>
@@ -387,10 +396,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/14/人脸识别原理简述/" rel="prev" title="人脸识别原理简述">
-                人脸识别原理简述 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -522,7 +527,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">参考文献:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">RNN的结构</span></a></li></ol></div>
             
 
           </div>
